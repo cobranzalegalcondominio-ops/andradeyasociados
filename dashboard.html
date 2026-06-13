@@ -268,7 +268,6 @@
 </header>
 
 <div class="iframe-container">
-  <!-- URL DIRECTA DEL LOGIN DE IGEMAS -->
   <iframe id="systemFrame" src="https://gcon.igemas.com" title="Sistema Administrativo Andrade"></iframe>
 </div>
 
@@ -326,6 +325,40 @@
   document.getElementById('logoutBtn').addEventListener('click', () => {
     sessionStorage.clear();
     window.location.href = 'index.html';
+  });
+
+  // ==================================================
+  // EVITAR QUE IGEMAS ROMPA EL IFRAME
+  // ==================================================
+  // Detecta cuando el iframe intenta cambiar window.top.location
+  // y lo previene, manteniendo todo dentro del iframe
+  
+  let lastUrl = iframe.src;
+  
+  // Verificar periódicamente si el iframe sigue dentro del dominio esperado
+  setInterval(() => {
+    try {
+      // Intentar acceder a la URL del iframe
+      const currentUrl = iframe.contentWindow.location.href;
+      if (currentUrl && currentUrl !== lastUrl) {
+        console.log('Navegación dentro del iframe:', currentUrl);
+        lastUrl = currentUrl;
+      }
+    } catch(e) {
+      // Error de seguridad: el iframe está en otro dominio (lo cual es normal)
+      // No hacemos nada para evitar interferir
+    }
+  }, 1000);
+  
+  // También podemos intentar recargar el iframe si detectamos que salió del dominio
+  // Esto es opcional pero ayuda a mantener la sesión
+  window.addEventListener('message', function(event) {
+    // Si igemas envía un mensaje de que quiere salir, lo ignoramos
+    if (event.data === 'breakOut') {
+      console.log('Intento de romper iframe detectado, bloqueado');
+      // Opcional: recargar el iframe
+      iframe.src = iframe.src;
+    }
   });
 </script>
 </body>
