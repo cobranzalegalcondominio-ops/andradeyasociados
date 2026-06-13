@@ -268,7 +268,7 @@
 </header>
 
 <div class="iframe-container">
-  <!-- URL CORREGIDA CON embed=true -->
+  <!-- URL base con embed=true para que no rompa el iframe -->
   <iframe id="systemFrame" src="https://gcon.igemas.com?embed=true" title="Sistema Administrativo Andrade"></iframe>
 </div>
 
@@ -277,7 +277,7 @@
 </button>
 
 <script>
-  // Mostrar nombre del usuario (puedes cambiarlo o dejarlo fijo)
+  // Mostrar nombre del usuario
   const userName = sessionStorage.getItem('userName');
   if (userName) {
     document.getElementById('userNameDisplay').innerHTML = userName;
@@ -329,23 +329,56 @@
   });
 
   // ==================================================
-  // REFORZAR EL COMPORTAMIENTO DENTRO DEL IFRAME
+  // REDIRECCIÓN AUTOMÁTICA AL DASHBOARD DESPUÉS DEL LOGIN
   // ==================================================
-  // Evitar que cualquier enlace dentro del iframe intente romper la ventana padre
-  setInterval(() => {
+  
+  // URL del dashboard real después del login (descubierta por el usuario)
+  const DASHBOARD_URL = 'https://gcon.igemas.com/MDCli/';
+  
+  let isLoggedIn = false;
+  
+  function checkAndRedirect() {
     try {
-      // Verificar si el iframe sigue cargado correctamente
-      const iframeDoc = iframe.contentWindow.document;
-      if (iframeDoc) {
-        // Buscar todos los enlaces que tengan target="_top" y cambiarlos
-        const links = iframeDoc.querySelectorAll('a[target="_top"], a[target="_parent"]');
-        links.forEach(link => {
-          link.setAttribute('target', '_self');
-        });
+      // Intentar acceder a la URL actual del iframe
+      const currentUrl = iframe.contentWindow.location.href;
+      console.log('URL actual del iframe:', currentUrl);
+      
+      // Si estamos en la página de inicio y no estamos logueados, redirigir al dashboard
+      if (currentUrl === 'https://gcon.igemas.com/' || currentUrl === 'https://gcon.igemas.com/?embed=true') {
+        if (!isLoggedIn) {
+          console.log('Redirigiendo al dashboard del sistema...');
+          iframe.contentWindow.location.href = DASHBOARD_URL;
+        }
       }
+      
+      // Si detectamos que estamos en el dashboard del sistema
+      if (currentUrl.includes('/MDCli/')) {
+        isLoggedIn = true;
+        console.log('Login exitoso - dentro del sistema');
+      }
+      
     } catch(e) {
-      // Error de seguridad o dominio cruzado - ignorar
+      // No se puede acceder por seguridad (dominio cruzado)
+      console.log('No se puede acceder al iframe por seguridad');
     }
+  }
+  
+  // Monitorear cambios en el iframe cada 2 segundos
+  setInterval(() => {
+    checkAndRedirect();
+  }, 2000);
+  
+  // También cuando el iframe se carga
+  iframe.addEventListener('load', () => {
+    console.log('Iframe cargado/recargado');
+    setTimeout(() => {
+      checkAndRedirect();
+    }, 1000);
+  });
+  
+  // Si el dashboard ya está cargado inicialmente, no hacer nada
+  setTimeout(() => {
+    checkAndRedirect();
   }, 3000);
 </script>
 </body>
