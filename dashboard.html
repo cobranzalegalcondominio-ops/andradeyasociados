@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Andrade y Asociados | Panel Administrativo</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FFFFFF;
+      color: #1A1A1A;
+      overflow: hidden;
+      height: 100vh;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Modo oscuro */
+    body.dark-mode {
+      background: #0A0A0A;
+    }
+    body.dark-mode .dashboard-header {
+      background: #000000;
+      border-bottom-color: #333;
+    }
+    body.dark-mode .logo-text h1 {
+      color: #FFFFFF;
+    }
+    body.dark-mode .header-actions button {
+      background: #1A1A1A;
+      color: #E0E0E0;
+      border-color: #333;
+    }
+    body.dark-mode .header-actions button:hover {
+      background: #2A2A2A;
+    }
+    body.dark-mode .user-info {
+      background: #1A1A1A;
+    }
+    body.dark-mode .logo-svg svg path {
+      stroke: #FFFFFF;
+    }
+
+    /* Header */
+    .dashboard-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E5E5E5;
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      transition: all 0.3s;
+    }
+
+    /* Logo */
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-svg {
+      width: 45px;
+      height: 45px;
+    }
+    .logo-svg svg {
+      width: 100%;
+      height: 100%;
+    }
+    .logo-svg svg path {
+      stroke: #000000;
+      stroke-width: 13;
+      fill: none;
+    }
+    .logo-text h1 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #000000;
+    }
+    .logo-text p {
+      font-size: 0.6rem;
+      color: #666;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Usuario */
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #F5F5F5;
+      padding: 0.3rem 1rem 0.3rem 1.2rem;
+      border-radius: 2rem;
+    }
+    .user-avatar {
+      width: 36px;
+      height: 36px;
+      background: #1A1A1A;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+    }
+    .user-details {
+      font-size: 0.8rem;
+    }
+    .user-details .user-name {
+      font-weight: 700;
+      color: #1A1A1A;
+    }
+    .user-details .user-role {
+      font-size: 0.65rem;
+      color: #888;
+    }
+
+    /* Botones */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .header-actions button {
+      background: #F5F5F5;
+      border: 1px solid #E5E5E5;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+    .header-actions button:hover {
+      background: #E8E8E8;
+      transform: translateY(-1px);
+    }
+    .btn-danger {
+      color: #e74c3c !important;
+    }
+    .btn-danger:hover {
+      background: #fee2e2 !important;
+      color: #c0392b !important;
+    }
+
+    /* Contenedor del iframe */
+    .iframe-container {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: calc(100% - 70px);
+      background: #F9FAFB;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: white;
+    }
+
+    /* Modo oscuro toggle */
+    .dark-mode-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #1A1A1A;
+      border: none;
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      z-index: 1001;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .dark-mode-toggle:hover {
+      transform: scale(1.05);
+    }
+    body.dark-mode .dark-mode-toggle {
+      background: #FFFFFF;
+      color: #000000;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-header { padding: 0.6rem 1rem; flex-wrap: wrap; }
+      .logo-svg { width: 35px; height: 35px; }
+      .logo-text h1 { font-size: 1rem; }
+      .logo-text p { font-size: 0.5rem; }
+      .user-info { padding: 0.2rem 0.8rem 0.2rem 1rem; }
+      .user-avatar { width: 28px; height: 28px; font-size: 0.7rem; }
+      .user-details .user-name { font-size: 0.7rem; }
+      .header-actions button { padding: 0.4rem 0.8rem; font-size: 0.7rem; }
+      .iframe-container { top: 65px; height: calc(100% - 65px); }
+      .hide-mobile { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="dashboard-header">
+  <div class="logo-area">
+    <div class="logo-svg">
+      <svg viewBox="0 0 320 250">
+        <path d="M 35,200 A 135,135 0 0,1 270,65" stroke-linecap="round"/>
+        <path d="M 40,220 L 40,210 L 145,120 L 235,210" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 145,160 L 210,105 L 290,185 L 290,210" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <h1>Andrade y Asociados</h1>
+      <p>Sistema Administrativo</p>
+    </div>
+  </div>
+
+  <div class="user-info">
+    <div class="user-avatar"><i class="fas fa-user"></i></div>
+    <div class="user-details">
+      <div class="user-name" id="userNameDisplay">Administrador</div>
+      <div class="user-role">Acceso total</div>
+    </div>
+  </div>
+
+  <div class="header-actions">
+    <button id="refreshBtn" title="Recargar">
+      <i class="fas fa-sync-alt"></i> <span class="hide-mobile">Recargar</span>
+    </button>
+    <button id="fullscreenBtn" title="Pantalla completa">
+      <i class="fas fa-expand"></i> <span class="hide-mobile">Pantalla completa</span>
+    </button>
+    <button id="logoutBtn" class="btn-danger" title="Cerrar sesión">
+      <i class="fas fa-sign-out-alt"></i> <span class="hide-mobile">Salir</span>
+    </button>
+  </div>
+</header>
+
+<div class="iframe-container">
+  <iframe id="systemFrame" src="https://gcon.igemas.com" title="Sistema Administrativo Andrade"></iframe>
+</div>
+
+<button id="darkModeToggle" class="dark-mode-toggle">
+  <i class="fas fa-moon"></i>
+</button>
+
+<script>
+  // Mostrar nombre del usuario
+  const userName = sessionStorage.getItem('userName');
+  if (userName) {
+    document.getElementById('userNameDisplay').innerHTML = userName;
+  }
+
+  // Modo oscuro persistente
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const isDarkMode = localStorage.getItem('dashboardDarkMode') === 'true';
+  if (isDarkMode) {
+    document.body.classList.add('dark-mode');
+    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  }
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('dashboardDarkMode', isDark);
+    darkModeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  });
+
+  // Recargar iframe
+  const iframe = document.getElementById('systemFrame');
+  document.getElementById('refreshBtn').addEventListener('click', () => {
+    iframe.src = iframe.src;
+  });
+
+  // Pantalla completa
+  const fullscreenBtn = document.getElementById('fullscreenBtn');
+  fullscreenBtn.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+      fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i> <span class="hide-mobile">Comprimir</span>';
+    } else {
+      document.exitFullscreen();
+      fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i> <span class="hide-mobile">Pantalla completa</span>';
+    }
+  });
+  document.addEventListener('fullscreenchange', () => {
+    if (document.fullscreenElement) {
+      fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i> <span class="hide-mobile">Comprimir</span>';
+    } else {
+      fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i> <span class="hide-mobile">Pantalla completa</span>';
+    }
+  });
+
+  // Cerrar sesión
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    sessionStorage.clear();
+    window.location.href = 'login.html';
+  });
+</script>
+</body>
+</html>
