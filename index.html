@@ -35,7 +35,7 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
     
-    /* ========== LOGO DE AGUA GIGANTE - MÁS VISIBLE ========== */
+    /* ========== LOGO DE AGUA GIGANTE ========== */
     .watermark {
       position: fixed;
       top: 0;
@@ -364,7 +364,7 @@
       cursor: not-allowed;
     }
 
-    /* HEADER - LOGO MÁS GRANDE */
+    /* HEADER - LOGO MÁS GRANDE Y MENÚ BLANCO */
     .navbar {
       position: sticky;
       top: 0;
@@ -463,37 +463,85 @@
       letter-spacing: 1.5px;
     }
     
+    /* MENÚ DE NAVEGACIÓN - LETRAS EN BLANCO */
     .nav-links {
       display: flex;
       align-items: center;
       gap: 2rem;
     }
+    
     .nav-links a {
-      color: #FFFFFF;
+      color: #FFFFFF !important;
       text-decoration: none;
       font-weight: 500;
       font-size: 0.95rem;
-      transition: 0.2s;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.2s;
     }
+    
     .nav-links a:hover {
-      color: #CCCCCC;
-      border-bottom: 2px solid #FFFFFF;
-      padding-bottom: 2px;
+      color: #CCCCCC !important;
     }
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
-    .menu-toggle span {
-      width: 28px;
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
       height: 2px;
-      background-color: #FFFFFF;
-      border-radius: 2px;
+      background: #FFFFFF;
+      transition: width 0.3s ease, left 0.3s ease;
     }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    
+    /* Botones del header */
+    .header-buttons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    /* Botón de acceso al sistema SaaS - REDIRIGE DIRECTAMENTE A dashboard.html */
+    .saas-access-btn {
+      background: linear-gradient(135deg, #1A1A1A 0%, #333333 100%);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .saas-access-btn i {
+      font-size: 1rem;
+    }
+    
+    .saas-access-btn:hover {
+      background: linear-gradient(135deg, #333333 0%, #4a4a4a 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    
+    body.dark-mode .saas-access-btn {
+      background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+      border-color: rgba(255,255,255,0.3);
+    }
+    
+    body.dark-mode .saas-access-btn:hover {
+      background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%);
+    }
+    
     .dark-mode-toggle {
       background: rgba(255,255,255,0.1);
       border: none;
@@ -511,6 +559,21 @@
     .dark-mode-toggle:hover {
       background: rgba(255,255,255,0.2);
       transform: scale(1.05);
+    }
+
+    /* MENÚ MÓVIL - TAMBIÉN EN BLANCO */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .menu-toggle span {
+      width: 28px;
+      height: 2px;
+      background-color: #FFFFFF;
     }
 
     /* HERO BANNER */
@@ -1153,7 +1216,7 @@
       transition: transform 0.2s; 
     }
 
-    /* FOOTER CON NEWSLETTER - ICONOS CON COLOR ORIGINAL */
+    /* FOOTER CON NEWSLETTER */
     footer {
       background: var(--dark-gray);
       color: #AAAAAA;
@@ -1201,7 +1264,6 @@
       margin-left: 1rem;
       font-size: 2rem;
     }
-    /* Facebook color original */
     .footer-socials a:first-child {
       color: #1877F2;
     }
@@ -1209,7 +1271,6 @@
       color: #0d5bd4;
       transform: translateY(-3px);
     }
-    /* Instagram color original */
     .footer-socials a:last-child {
       color: #E4405F;
     }
@@ -1260,50 +1321,37 @@
       background: #1da15a; 
     }
 
-    /* ROBOT VIAJERO */
-    .travel-robot {
+    /* Efecto de burbuja con logo */
+    .click-bubble {
       position: fixed;
-      bottom: 90px;
-      right: 20px;
-      width: 55px;
-      height: 55px;
-      z-index: 1001;
-      cursor: pointer;
-    }
-    .robot-avatar {
-      width: 100%;
-      height: 100%;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-      animation: robotFloat 2s infinite ease-in-out;
-    }
-    .travel-robot.paused .robot-avatar {
-      animation: none;
-    }
-    @keyframes robotFloat { 
-      0%, 100% { transform: translateY(0px); } 
-      50% { transform: translateY(-5px); } 
-    }
-    .speech-bubble {
-      position: absolute;
-      top: -40px;
-      right: 0;
-      background: var(--white);
-      color: var(--dark-gray);
-      padding: 4px 8px;
-      border-radius: 14px;
-      font-size: 0.6rem;
-      font-weight: 500;
-      white-space: nowrap;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      opacity: 0;
-      transition: opacity 0.3s;
       pointer-events: none;
-      border: 1px solid var(--border-light);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: bubblePop 0.8s ease-out forwards;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
-    .travel-robot:hover .speech-bubble { 
-      opacity: 1; 
+    
+    .click-bubble svg {
+      width: 65%;
+      height: 65%;
+    }
+    
+    .click-bubble svg path {
+      stroke: currentColor;
+      stroke-width: 10;
+      fill: none;
+    }
+    
+    @keyframes bubblePop {
+      0% { transform: scale(0); opacity: 1; }
+      40% { transform: scale(1.15); opacity: 0.9; }
+      70% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.3); opacity: 0; }
     }
 
     /* RESPONSIVE */
@@ -1316,14 +1364,14 @@
     }
     
     @media (max-width: 768px) {
-      /* Header móvil - logo más grande */
       .navbar { padding: 0.7rem 1rem; }
       .logo-svg-container { width: 50px; height: 50px; }
       .logo-text h1 { font-size: 1.1rem; }
       .logo-text p { font-size: 0.55rem; }
       .dark-mode-toggle { width: 38px; height: 38px; font-size: 0.9rem; }
+      .saas-access-btn { padding: 0.5rem 1rem; font-size: 0.75rem; }
+      .saas-access-btn i { font-size: 0.8rem; }
       
-      /* Menú móvil */
       .menu-toggle { display: flex; }
       .nav-links { 
         display: none; 
@@ -1339,77 +1387,57 @@
         border-top: 1px solid rgba(255,255,255,0.1); 
       }
       .nav-links a { 
-        color: #FFFFFF; 
+        color: #FFFFFF !important; 
         padding: 0.4rem 0; 
         font-size: 0.85rem; 
         text-align: center;
       }
       .nav-links.active { display: flex; }
       
-      /* Grids móviles */
       .services-grid { grid-template-columns: 1fr; }
       .testimonial-carousel-slide { min-width: calc(100% - 1rem); }
       .stats-container { padding: 0.8rem; }
-      
-      /* Tarjetas móviles */
       .service-header { padding: 0.8rem; }
       .service-header h3 { font-size: 0.85rem; }
       .service-content p { font-size: 0.75rem; }
-      
-      /* Botones flotantes móviles */
       .whatsapp-float { bottom: 15px; right: 15px; width: 48px; height: 48px; font-size: 1.5rem; }
-      .travel-robot { bottom: 80px; right: 15px; width: 48px; height: 48px; }
-      
-      /* Secciones móviles */
       .about-section { padding: 2rem 1rem; }
       .services-grid-section { padding: 2rem 1rem; }
       .testimonial-carousel-section { padding: 2rem 1rem; }
       .contact-section { padding: 2rem 1rem; }
       .video-ai-space { padding: 1rem 1rem 1.5rem; }
       .app-highlight { padding: 1.5rem 1rem 2rem; }
-      
-      /* Ticker móvil */
       .ticker-item { font-size: 0.65rem; }
       .ticker-item i { font-size: 0.7rem; }
       .ticker-container { gap: 0.8rem; }
-      
-      /* Footer móvil - iconos más grandes con color */
       .footer-socials a { font-size: 1.8rem; margin-left: 0.8rem; }
       .footer-content { flex-direction: column; text-align: center; }
       .newsletter-form { justify-content: center; }
-      
-      /* Logo hover móvil */
       .logo-area:hover { transform: translateY(-2px); }
       .logo-area:hover .logo-svg-container { transform: scale(1.05); }
-      
-      /* Títulos móviles */
       .services-grid-section h2, .testimonial-carousel-section h2, .contact-section h2 {
         font-size: 1.5rem;
       }
-      .about-text h2 {
-        font-size: 1.5rem;
-      }
-      
-      /* Estadísticas móviles */
-      .stat-number {
-        font-size: 1.4rem;
-      }
-      .stat-card i {
-        font-size: 1.5rem;
-      }
+      .about-text h2 { font-size: 1.5rem; }
+      .stat-number { font-size: 1.4rem; }
+      .stat-card i { font-size: 1.5rem; }
+      .click-bubble { width: 70px; height: 70px; }
+      .click-bubble svg { width: 60%; height: 60%; }
     }
     
     @media (max-width: 480px) {
-      /* Ajustes adicionales para móviles muy pequeños */
       .navbar { padding: 0.6rem 0.8rem; }
       .logo-svg-container { width: 42px; height: 42px; }
       .logo-text h1 { font-size: 0.9rem; }
       .dark-mode-toggle { width: 34px; height: 34px; font-size: 0.8rem; }
+      .saas-access-btn { padding: 0.4rem 0.8rem; font-size: 0.7rem; }
       .cinex-slide-content h2 { font-size: 1.2rem; }
       .cinex-slide-content p { font-size: 0.7rem; }
       .service-header h3 { font-size: 0.8rem; }
       .service-header i { font-size: 1.1rem; min-width: 24px; }
       .footer-socials a { font-size: 1.5rem; margin-left: 0.6rem; }
+      .click-bubble { width: 55px; height: 55px; }
+      .click-bubble svg { width: 55%; height: 55%; }
     }
   </style>
 </head>
@@ -1448,7 +1476,12 @@
       <a href="#testimonios">Reseñas</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+    <div class="header-buttons">
+      <button class="saas-access-btn" id="saasAccessBtn">
+        <i class="fas fa-chalkboard-user"></i> Sistema Administrativo
+      </button>
+      <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+    </div>
   </div>
 </nav>
 
@@ -1492,6 +1525,8 @@
     <div class="ticker-item"><i class="fas fa-shield-alt"></i> Respaldo Jurídico</div>
     <div class="ticker-separator"></div>
     <div class="ticker-item"><i class="fas fa-calculator"></i> Auditoría Transparente</div>
+    <div class="ticker-separator"></div>
+    <div class="ticker-item"><i class="fas fa-clock"></i> Horario: Lun-Vie 9am a 4pm</div>
   </div>
 </div>
 
@@ -1587,7 +1622,12 @@
         <button type="submit" class="btn-primary" id="submitBtn" style="width:100%; justify-content:center;">Enviar Mensaje</button>
         <div id="formMessage"></div>
       </form>
-      <div class="contact-meta-info"><div class="meta-item"><i class="fas fa-phone-alt"></i> +58 212 751 0275</div><div class="meta-item"><i class="fas fa-envelope"></i> contacto@andradeyasoc.com</div><div class="meta-item"><i class="fas fa-map-marker-alt"></i> Colinas de Bello Monte, Caracas</div></div>
+      <div class="contact-meta-info">
+        <div class="meta-item"><i class="fas fa-phone-alt"></i> +58 212 751 0275</div>
+        <div class="meta-item"><i class="fas fa-envelope"></i> contacto@andradeyasoc.com</div>
+        <div class="meta-item"><i class="fas fa-map-marker-alt"></i> Colinas de Bello Monte, Caracas</div>
+        <div class="meta-item"><i class="fas fa-clock"></i> Horario: Lun-Vie 9am a 4pm</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1623,12 +1663,6 @@
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/584141234567?text=Hola%2C%20me%20interesa%20sus%20servicios" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<!-- ROBOT VIAJERO -->
-<div id="travelRobot" class="travel-robot">
-  <img class="robot-avatar" src="rob.png" alt="Robot Asistente">
-  <div class="speech-bubble" id="robotMsg">¡Hola! Soy Rob 🤖 ¿Necesitas ayuda?</div>
-</div>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 800, once: true, offset: 80 });
@@ -1647,6 +1681,14 @@
     }
   });
 
+  // SISTEMA ADMINISTRATIVO - REDIRECCIÓN DIRECTA A dashboard.html
+  const saasAccessBtn = document.getElementById('saasAccessBtn');
+  
+  saasAccessBtn.addEventListener('click', () => {
+    // Redirige directamente al dashboard con iframe de igemas
+    window.location.href = 'dashboard.html';
+  });
+
   // MENU MOBILE
   const menuToggle = document.getElementById('mobile-menu-btn');
   const navLinks = document.getElementById('nav-links-container');
@@ -1660,6 +1702,37 @@
       const target = document.querySelector(this.getAttribute('href'));
       if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+  });
+
+  // EFECTO BURBUJA CON LOGO
+  function createClickBubble(x, y) {
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    const bubbleColor = isDarkMode ? '#FFFFFF' : '#1A1A1A';
+    
+    const bubble = document.createElement('div');
+    bubble.className = 'click-bubble';
+    bubble.style.left = (x - 50) + 'px';
+    bubble.style.top = (y - 50) + 'px';
+    bubble.style.backgroundColor = isDarkMode ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.06)';
+    bubble.style.border = `2px solid ${bubbleColor}`;
+    bubble.style.color = bubbleColor;
+    
+    bubble.innerHTML = `
+      <svg viewBox="0 0 320 250">
+        <path d="M 35,200 A 135,135 0 0,1 270,65" stroke-linecap="round"/>
+        <path d="M 40,220 L 40,210 L 145,120 L 235,210" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 145,160 L 210,105 L 290,185 L 290,210" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    `;
+    
+    document.body.appendChild(bubble);
+    setTimeout(() => bubble.remove(), 800);
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.saas-access-btn')) {
+      createClickBubble(e.clientX, e.clientY);
+    }
   });
 
   // SKELETON SCREEN
@@ -1794,73 +1867,6 @@
       document.getElementById('newsletterMessage').innerHTML = '<div style="color:#e74c3c; margin-top:0.5rem;">Email inválido</div>';
     }
   });
-
-  // ROBOT VIAJERO
-  const robot = document.getElementById('travelRobot');
-  const robotMsg = document.getElementById('robotMsg');
-  let robotX = -100, direction = 1, speed = 1.2, lastTimestamp = 0, lastSection = '';
-  let robotAnimationId = null;
-  let robotPaused = false;
-  
-  const msgs = { 'inicio':'🤖 ¡Bienvenido!','nosotros':'📖 Conoce nuestra historia','servicios-info':'📚 Información y Servicios','testimonios':'⭐ Clientes satisfechos','contacto':'📞 Escríbenos por WhatsApp' };
-  
-  function updateMsg() {
-    for (let id of ['inicio','nosotros','servicios-info','testimonios','contacto']) {
-      const el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top < window.innerHeight/2 && el.getBoundingClientRect().bottom > window.innerHeight/4) {
-        if (lastSection !== id) { robotMsg.textContent = msgs[id] || '🤖 ¿Necesitas ayuda?'; robotMsg.style.opacity = '1'; setTimeout(() => robotMsg.style.opacity = '0', 4000); lastSection = id; }
-        break;
-      }
-    }
-  }
-  
-  function animateRobot(t) {
-    if (robotPaused) {
-      lastTimestamp = t;
-      robotAnimationId = requestAnimationFrame(animateRobot);
-      return;
-    }
-    if (!lastTimestamp) lastTimestamp = t;
-    const delta = Math.min(100, t - lastTimestamp);
-    if (delta > 0) {
-      robotX += direction * speed * (delta/16);
-      const w = window.innerWidth, rw = robot.offsetWidth;
-      if (robotX+rw > w-70) { robotX = w-rw-70; direction = -1; }
-      else if (robotX < 15) { robotX = 15; direction = 1; }
-      robot.style.left = robotX + 'px'; robot.style.bottom = '80px'; robot.style.right = 'auto';
-    }
-    lastTimestamp = t;
-    robotAnimationId = requestAnimationFrame(animateRobot);
-    updateMsg();
-  }
-  
-  // Un clic: pausa el movimiento
-  robot.addEventListener('click', (e) => {
-    e.stopPropagation();
-    robotPaused = true;
-    robot.classList.add('paused');
-    robotMsg.textContent = '🤖 Robot detenido. Haz doble clic para reactivar.';
-    robotMsg.style.opacity = '1';
-    setTimeout(() => robotMsg.style.opacity = '0', 3000);
-  });
-  
-  // Doble clic: reactiva el movimiento
-  robot.addEventListener('dblclick', (e) => {
-    e.stopPropagation();
-    robotPaused = false;
-    robot.classList.remove('paused');
-    lastTimestamp = null;
-    robotMsg.textContent = '🤖 ¡En movimiento de nuevo!';
-    robotMsg.style.opacity = '1';
-    setTimeout(() => robotMsg.style.opacity = '0', 3000);
-  });
-  
-  setTimeout(() => { 
-    robotX = window.innerWidth - 70; 
-    direction = -1; 
-    robot.style.left = robotX + 'px'; 
-    robotAnimationId = requestAnimationFrame(animateRobot); 
-  }, 500);
 </script>
 </body>
 </html>
