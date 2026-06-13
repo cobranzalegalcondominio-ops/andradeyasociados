@@ -268,7 +268,8 @@
 </header>
 
 <div class="iframe-container">
-  <iframe id="systemFrame" src="https://gcon.igemas.com" title="Sistema Administrativo Andrade"></iframe>
+  <!-- URL CORREGIDA CON embed=true -->
+  <iframe id="systemFrame" src="https://gcon.igemas.com?embed=true" title="Sistema Administrativo Andrade"></iframe>
 </div>
 
 <button id="darkModeToggle" class="dark-mode-toggle">
@@ -328,38 +329,24 @@
   });
 
   // ==================================================
-  // EVITAR QUE IGEMAS ROMPA EL IFRAME
+  // REFORZAR EL COMPORTAMIENTO DENTRO DEL IFRAME
   // ==================================================
-  // Detecta cuando el iframe intenta cambiar window.top.location
-  // y lo previene, manteniendo todo dentro del iframe
-  
-  let lastUrl = iframe.src;
-  
-  // Verificar periódicamente si el iframe sigue dentro del dominio esperado
+  // Evitar que cualquier enlace dentro del iframe intente romper la ventana padre
   setInterval(() => {
     try {
-      // Intentar acceder a la URL del iframe
-      const currentUrl = iframe.contentWindow.location.href;
-      if (currentUrl && currentUrl !== lastUrl) {
-        console.log('Navegación dentro del iframe:', currentUrl);
-        lastUrl = currentUrl;
+      // Verificar si el iframe sigue cargado correctamente
+      const iframeDoc = iframe.contentWindow.document;
+      if (iframeDoc) {
+        // Buscar todos los enlaces que tengan target="_top" y cambiarlos
+        const links = iframeDoc.querySelectorAll('a[target="_top"], a[target="_parent"]');
+        links.forEach(link => {
+          link.setAttribute('target', '_self');
+        });
       }
     } catch(e) {
-      // Error de seguridad: el iframe está en otro dominio (lo cual es normal)
-      // No hacemos nada para evitar interferir
+      // Error de seguridad o dominio cruzado - ignorar
     }
-  }, 1000);
-  
-  // También podemos intentar recargar el iframe si detectamos que salió del dominio
-  // Esto es opcional pero ayuda a mantener la sesión
-  window.addEventListener('message', function(event) {
-    // Si igemas envía un mensaje de que quiere salir, lo ignoramos
-    if (event.data === 'breakOut') {
-      console.log('Intento de romper iframe detectado, bloqueado');
-      // Opcional: recargar el iframe
-      iframe.src = iframe.src;
-    }
-  });
+  }, 3000);
 </script>
 </body>
 </html>
