@@ -178,7 +178,7 @@
       bottom: 0;
       width: 100%;
       height: calc(100% - 70px);
-      background: #F9FAFB;
+      background: #FFFFFF;
     }
     iframe {
       width: 100%;
@@ -268,6 +268,7 @@
 </header>
 
 <div class="iframe-container">
+  <!-- URL DIRECTA DEL LOGIN DE IGEMAS -->
   <iframe id="systemFrame" src="https://gcon.igemas.com" title="Sistema Administrativo Andrade"></iframe>
 </div>
 
@@ -276,7 +277,7 @@
 </button>
 
 <script>
-  // Mostrar nombre del usuario
+  // Mostrar nombre del usuario (puedes cambiarlo o dejarlo fijo)
   const userName = sessionStorage.getItem('userName');
   if (userName) {
     document.getElementById('userNameDisplay').innerHTML = userName;
@@ -321,10 +322,10 @@
     }
   });
 
-  // Cerrar sesión
+  // Cerrar sesión - vuelve a la página principal
   document.getElementById('logoutBtn').addEventListener('click', () => {
     sessionStorage.clear();
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
   });
 </script>
 </body>
