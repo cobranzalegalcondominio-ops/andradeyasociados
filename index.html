@@ -468,8 +468,7 @@
     }
 
     /* ============================================================
-       TESTIMONIOS - CARRUSEL CON 6 TARJETAS (3 POR PÁGINA)
-       TAURUS II DE PRIMERO
+       TESTIMONIOS - CARRUSEL CON 5 TARJETAS (TODAS VISIBLES)
        ============================================================ */
     .testimonial-section {
       padding: 3rem 1.5rem;
@@ -501,7 +500,6 @@
       max-width: calc(33.333% - 1rem);
     }
     
-    /* TARJETA DE TESTIMONIO - ESTILO CARD */
     .testimonial-card {
       background: #FFFFFF !important;
       border-radius: 1rem !important;
@@ -992,7 +990,7 @@
 </div>
 
 <!-- ============================================================
-TESTIMONIOS - CARRUSEL CON 6 TARJETAS (TAURUS II DE PRIMERO)
+TESTIMONIOS - CARRUSEL CON 5 TARJETAS (TODAS VISIBLES)
 ============================================================ -->
 <section id="testimonios" class="testimonial-section">
   <h2>La voz de <span style="color:#1A1A1A;">nuestras comunidades</span></h2>
@@ -1000,14 +998,14 @@ TESTIMONIOS - CARRUSEL CON 6 TARJETAS (TAURUS II DE PRIMERO)
   <div class="testimonial-carousel-container">
     <div class="testimonial-carousel-track" id="testimonialTrack">
       
-      <!-- Tarjeta 1 - RESIDENCIAS TAURUS II (PRIMERO) -->
+      <!-- Tarjeta 1 - RESIDENCIAS TAURUS II -->
       <div class="testimonial-carousel-slide">
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">"Saludos y bendiciones para todos ustedes. En nombre de las Residencias Taurus II, queremos darle las gracias por todo lo que hemos logrado en estos dos años de trabajo arduo, difícil, pero con unos resultados increíbles. Asesoramiento impecable, logramos bajar el índice de morosidad gracias a su departamento de cobranza que ha sido constante y de metodología eficaz. Hemos solventado juntos problemas que creíamos imposibles de arreglar. Estamos muy agradecidos y complacidos con su trabajo. Mil gracias, mil bendiciones y esperamos continuar con ustedes muchos años más."</p>
           <div class="testimonial-author">
             <h4>Junta de Condominio</h4>
-            <span>Residencias Taurus II ⭐</span>
+            <span>Residencias Taurus II</span>
           </div>
         </div>
       </div>
@@ -1056,18 +1054,6 @@ TESTIMONIOS - CARRUSEL CON 6 TARJETAS (TAURUS II DE PRIMERO)
           <div class="testimonial-author">
             <h4>Propietario</h4>
             <span>Junta de Condominio</span>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Tarjeta 6 -->
-      <div class="testimonial-carousel-slide">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"Es una propuesta que hicimos la semana pasada. La reunión muy buena ayer."</p>
-          <div class="testimonial-author">
-            <h4>Propietario</h4>
-            <span>Res Vista Real</span>
           </div>
         </div>
       </div>
@@ -1194,7 +1180,7 @@ TESTIMONIOS - CARRUSEL CON 6 TARJETAS (TAURUS II DE PRIMERO)
     updateSlider();
   }
 
-  // TESTIMONIAL CAROUSEL - 6 TARJETAS (2 PÁGINAS DE 3)
+  // TESTIMONIAL CAROUSEL - 5 TARJETAS (2 PÁGINAS: 3 + 2)
   function initTestimonialCarousel() {
     const track = document.getElementById('testimonialTrack');
     const slides = Array.from(document.querySelectorAll('.testimonial-carousel-slide'));
