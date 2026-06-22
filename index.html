@@ -5,18 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Andrade y Asociados | Administración de Condominios</title>
   
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="andrade.svg">
   <link rel="shortcut icon" href="andrade.svg">
   <link rel="apple-touch-icon" href="andrade.svg">
   
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
-  <!-- AOS Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
@@ -32,10 +26,8 @@
       color: #1A1A1A;
       scroll-behavior: smooth;
       overflow-x: hidden;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
-    
-    /* ========== LOGO DE AGUA GIGANTE ========== */
+
     .watermark {
       position: fixed;
       top: 0;
@@ -48,188 +40,16 @@
       pointer-events: none;
       z-index: 0;
     }
-    
     .watermark svg {
       width: 85%;
       max-width: 900px;
       height: auto;
       opacity: 0.12;
     }
-    
-    body.dark-mode .watermark svg {
-      opacity: 0.15;
-    }
-    
     .watermark svg path {
       stroke: #1A1A1A;
       stroke-width: 20;
       fill: none;
-    }
-    
-    body.dark-mode .watermark svg path {
-      stroke: #E0E0E0;
-    }
-    
-    @media (max-width: 768px) {
-      .watermark svg {
-        width: 95%;
-        opacity: 0.1;
-      }
-      body.dark-mode .watermark svg {
-        opacity: 0.12;
-      }
-    }
-    
-    /* Aseguramos que todo el contenido esté por encima del watermark */
-    .navbar, .cinex-banner-container, .cinex-ticker, .about-section, 
-    .accordion-section, .services-grid-section, .video-ai-space, 
-    .app-highlight, .testimonial-carousel-section, .contact-section, footer,
-    .stats-container, .services-grid, .about-grid, .map-contact {
-      position: relative;
-      z-index: 1;
-      background: transparent;
-    }
-    
-    /* Las tarjetas necesitan fondo sólido para ser legibles */
-    .about-text, .service-card, .testimonial-card, .app-card, .stat-card, .map-contact {
-      background: var(--white);
-      backdrop-filter: blur(0px);
-    }
-    
-    body.dark-mode .about-text,
-    body.dark-mode .service-card,
-    body.dark-mode .testimonial-card,
-    body.dark-mode .app-card,
-    body.dark-mode .stat-card,
-    body.dark-mode .map-contact {
-      background: #1A1A1A;
-    }
-    
-    /* El ticker y otras secciones necesitan fondo */
-    .cinex-ticker, .testimonial-carousel-section, .stats-container {
-      background: var(--light-gray);
-    }
-    
-    body.dark-mode .cinex-ticker,
-    body.dark-mode .testimonial-carousel-section,
-    body.dark-mode .stats-container {
-      background: #111;
-    }
-
-    /* MODO OSCURO - MEJORADO */
-    body.dark-mode {
-      background: #0A0A0A;
-      color: #E0E0E0;
-    }
-    
-    /* TARJETAS DE SERVICIOS (ACORDEONES) EN MODO OSCURO */
-    body.dark-mode .service-card {
-      background: #1A1A1A !important;
-      border-color: #333 !important;
-    }
-    
-    body.dark-mode .service-header {
-      background: #1A1A1A !important;
-    }
-    
-    body.dark-mode .service-card:hover .service-header {
-      background: #252525 !important;
-    }
-    
-    body.dark-mode .service-header h3,
-    body.dark-mode .service-header i {
-      color: #FFFFFF !important;
-    }
-    
-    body.dark-mode .service-content {
-      background: #1A1A1A !important;
-    }
-    
-    body.dark-mode .service-content p {
-      color: #CCCCCC !important;
-    }
-    
-    body.dark-mode .service-card.active {
-      background: #1A1A1A !important;
-    }
-    
-    body.dark-mode .service-card.active .service-content {
-      border-top-color: #333 !important;
-    }
-    
-    /* OTRAS TARJETAS EN MODO OSCURO */
-    body.dark-mode .about-text,
-    body.dark-mode .testimonial-card,
-    body.dark-mode .app-card,
-    body.dark-mode .map-contact,
-    body.dark-mode .stat-card {
-      background: #1A1A1A !important;
-      border-color: #333 !important;
-    }
-    
-    body.dark-mode .about-text p,
-    body.dark-mode .testimonial-card p {
-      color: #CCCCCC !important;
-    }
-    
-    /* FORZAR COLOR BLANCO PARA TEXTOS IMPORTANTES */
-    body.dark-mode .stat-card .stat-number,
-    body.dark-mode .stat-card .stat-label,
-    body.dark-mode .stat-card i,
-    body.dark-mode .exp-block,
-    body.dark-mode .about-text h2,
-    body.dark-mode .services-grid-section h2,
-    body.dark-mode .testimonial-carousel-section h2,
-    body.dark-mode .contact-section h2,
-    body.dark-mode .contact-form-wrapper h3,
-    body.dark-mode .testimonial-author h4,
-    body.dark-mode .testimonial-author span,
-    body.dark-mode .app-card h3,
-    body.dark-mode .app-card p,
-    body.dark-mode .app-card i,
-    body.dark-mode .contact-meta-info .meta-item,
-    body.dark-mode .contact-meta-info .meta-item i,
-    body.dark-mode .ticker-item,
-    body.dark-mode .ticker-item i {
-      color: #FFFFFF !important;
-    }
-    
-    body.dark-mode .service-content .btn-primary {
-      background: #333;
-      color: white;
-    }
-    body.dark-mode .service-content .btn-primary:hover {
-      background: #444;
-    }
-    body.dark-mode .founders-photo {
-      background: #1A1A1A !important;
-    }
-    body.dark-mode .form-control {
-      background: #2A2A2A;
-      border-color: #444;
-      color: #FFF;
-    }
-    body.dark-mode .btn-primary {
-      background: #333;
-      color: white;
-    }
-    body.dark-mode .btn-primary:hover {
-      background: #444;
-    }
-    body.dark-mode .progress-bar {
-      background: #333;
-    }
-    body.dark-mode .progress-fill {
-      background: #FFFFFF;
-    }
-    body.dark-mode .stats-container {
-      background: #111;
-    }
-    body.dark-mode .dot {
-      background: #444;
-    }
-    body.dark-mode .dot.active {
-      background: #FFFFFF;
     }
 
     :root {
@@ -240,131 +60,15 @@
       --white: #FFFFFF;
       --border-light: #E5E5E5;
       --border-medium: #D1D1D1;
-      --shadow-sm: 0 8px 20px rgba(0,0,0,0.03);
-      --shadow-md: 0 12px 30px rgba(0,0,0,0.05);
-      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      --whatsapp-green: #25D366;
     }
 
-    body.dark-mode {
-      --light-gray: #1A1A1A;
-      --border-light: #333;
-      --border-medium: #444;
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
-    /* EFECTOS GLOBALES */
-    @keyframes textShine {
-      0% { background-position: -200% center; }
-      100% { background-position: 200% center; }
-    }
-    .shimmer-dark {
-      background: linear-gradient(90deg, 
-        var(--dark-gray) 0%, 
-        #5a5a5a 30%, 
-        #cccccc 50%, 
-        #5a5a5a 70%, 
-        var(--dark-gray) 100%);
-      background-size: 200% auto;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: textShine 4s linear infinite;
-    }
-    body.dark-mode .shimmer-dark {
-      background: linear-gradient(90deg, 
-        #FFFFFF 0%, 
-        #AAAAAA 30%, 
-        #888888 50%, 
-        #AAAAAA 70%, 
-        #FFFFFF 100%);
-      background-size: 200% auto;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    @keyframes subtlePulse {
-      0%, 100% { text-shadow: 0 0 0px rgba(0,0,0,0); }
-      50% { text-shadow: 0 0 4px rgba(0,0,0,0.3), 0 0 8px rgba(100,100,100,0.2); }
-    }
-    .pulse-text {
-      animation: subtlePulse 3s infinite ease-in-out;
-    }
-
-    .cinex-glow-text { 
-      color: #FFFFFF; 
-      text-shadow: 0 0 12px rgba(255,255,255,0.5), 0 0 20px rgba(255,255,255,0.3);
-      transition: text-shadow 0.3s;
-    }
-
-    /* Borde animado para App Residencial */
-    @keyframes borderGlowAlternate {
-      0% { box-shadow: 0 0 0px 0px rgba(37, 211, 102, 0.4), 0 0 0px 2px rgba(37, 211, 102, 0.2); border-color: #25D366; }
-      50% { box-shadow: 0 0 12px 4px rgba(255, 0, 255, 0.6), 0 0 0px 2px rgba(255, 0, 255, 0.4); border-color: #FF00FF; }
-      100% { box-shadow: 0 0 0px 0px rgba(37, 211, 102, 0.4), 0 0 0px 2px rgba(37, 211, 102, 0.2); border-color: #25D366; }
-    }
-    .glow-card {
-      border: 2px solid #25D366;
-      animation: borderGlowAlternate 3s infinite ease-in-out;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .glow-card:hover {
-      animation: borderGlowAlternate 1s infinite;
-      transform: translateY(-6px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
-    }
-
-    .title-underline {
-      position: relative;
-      display: inline-block;
-      padding-bottom: 8px;
-    }
-    .title-underline::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--dark-gray), var(--gray), var(--white), var(--gray), var(--dark-gray));
-      background-size: 200% auto;
-      transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .title-underline:hover::after {
-      width: 100%;
-      animation: underlineShine 1.5s linear infinite;
-    }
-    @keyframes underlineShine {
-      0% { background-position: -200% center; }
-      100% { background-position: 200% center; }
-    }
-
-    .btn-primary {
-      background: var(--dark-gray);
-      border: none;
-      color: white;
-      font-weight: 600;
-      padding: 0.7rem 1.5rem;
-      border-radius: 2rem;
-      transition: var(--transition-smooth);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      font-size: 0.85rem;
-    }
-    .btn-primary:hover {
-      background: var(--black);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-    }
-    .btn-primary:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    /* HEADER - LOGO MÁS GRANDE Y MENÚ BLANCO */
+    /* HEADER */
     .navbar {
       position: sticky;
       top: 0;
@@ -373,9 +77,6 @@
       border-bottom: 1px solid rgba(255,255,255,0.1);
       padding: 0.8rem 2rem;
     }
-    body.dark-mode .navbar {
-      background: #000000;
-    }
     .nav-container {
       max-width: 1400px;
       margin: 0 auto;
@@ -383,133 +84,58 @@
       justify-content: space-between;
       align-items: center;
     }
-    
-    /* LOGO MÁS GRANDE */
     .logo-area {
       display: flex;
       align-items: center;
       gap: 15px;
       text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     }
-    
-    .logo-area:hover {
-      transform: translateY(-3px);
-    }
-    
     .logo-svg-container {
       width: 60px;
       height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s ease;
     }
-    
-    .logo-area:hover .logo-svg-container {
-      transform: scale(1.08);
-      filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
-    }
-    
     .logo-svg-container svg {
       width: 100%;
       height: 100%;
-      transition: all 0.3s ease;
     }
-    
     .logo-svg-container svg path {
       stroke: #FFFFFF;
       stroke-width: 13;
       fill: none;
-      transition: stroke 0.3s ease, filter 0.3s ease;
     }
-    
-    .logo-area:hover .logo-svg-container svg path {
-      stroke: #E0E0E0;
-    }
-    
-    .logo-text {
-      transition: all 0.3s ease;
-    }
-    
-    .logo-area:hover .logo-text {
-      transform: translateX(3px);
-    }
-    
     .logo-text h1 {
       font-size: 1.5rem;
       font-weight: 800;
-      letter-spacing: 0.5px;
       color: #FFFFFF;
-      transition: all 0.3s ease;
     }
-    
-    .logo-area:hover .logo-text h1 {
-      color: #E0E0E0;
-      text-shadow: 0 0 6px rgba(255,255,255,0.3);
-    }
-    
     .logo-text p {
       font-size: 0.7rem;
       color: #CCCCCC;
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
-      transition: all 0.3s ease;
     }
-    
-    .logo-area:hover .logo-text p {
-      color: #AAAAAA;
-      letter-spacing: 1.5px;
-    }
-    
-    /* MENÚ DE NAVEGACIÓN - LETRAS EN BLANCO */
     .nav-links {
       display: flex;
       align-items: center;
       gap: 2rem;
     }
-    
     .nav-links a {
       color: #FFFFFF !important;
       text-decoration: none;
       font-weight: 500;
       font-size: 0.95rem;
-      position: relative;
-      padding-bottom: 4px;
-      transition: color 0.2s;
     }
-    
-    .nav-links a:hover {
-      color: #CCCCCC !important;
-    }
-    
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: #FFFFFF;
-      transition: width 0.3s ease, left 0.3s ease;
-    }
-    
-    .nav-links a:hover::after {
-      width: 100%;
-      left: 0;
-    }
-    
-    /* Botones del header */
     .header-buttons {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
-    
-    /* Botón de acceso al sistema SaaS - REDIRIGE DIRECTAMENTE A dashboard.html */
     .saas-access-btn {
-      background: linear-gradient(135deg, #1A1A1A 0%, #333333 100%);
+      background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.2);
       color: white;
       padding: 0.6rem 1.2rem;
@@ -517,31 +143,10 @@
       cursor: pointer;
       font-size: 0.85rem;
       font-weight: 600;
-      transition: all 0.2s;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    
-    .saas-access-btn i {
-      font-size: 1rem;
-    }
-    
-    .saas-access-btn:hover {
-      background: linear-gradient(135deg, #333333 0%, #4a4a4a 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    
-    body.dark-mode .saas-access-btn {
-      background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
-      border-color: rgba(255,255,255,0.3);
-    }
-    
-    body.dark-mode .saas-access-btn:hover {
-      background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%);
-    }
-    
     .dark-mode-toggle {
       background: rgba(255,255,255,0.1);
       border: none;
@@ -551,17 +156,7 @@
       border-radius: 50%;
       cursor: pointer;
       font-size: 1.1rem;
-      transition: 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .dark-mode-toggle:hover {
-      background: rgba(255,255,255,0.2);
-      transform: scale(1.05);
-    }
-
-    /* MENÚ MÓVIL - TAMBIÉN EN BLANCO */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -600,109 +195,72 @@
       min-height: 450px;
     }
     .cinex-slide::before {
-      content: ''; 
-      position: absolute; 
-      top: 0; 
-      left: 0; 
-      width: 100%; 
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
       background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
       z-index: 1;
     }
-    .cinex-slide-content { 
-      position: relative; 
-      z-index: 2; 
-      max-width: 1400px; 
-      margin: 0 auto; 
-      width: 100%; 
+    .cinex-slide-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
       padding: 4rem;
     }
-    .cinex-slide-content h2 { 
-      font-size: 2.8rem; 
-      font-weight: 800; 
-      color: #FFFFFF; 
-      line-height: 1.2; 
-      font-family: 'Playfair Display', serif; 
-      margin-bottom: 1rem; 
+    .cinex-slide-content h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
       max-width: 600px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
-    .cinex-slide-content p { 
-      color: #F0F0F0; 
-      font-size: 1rem; 
-      max-width: 500px; 
-      line-height: 1.5; 
-      margin-bottom: 1.5rem; 
-      text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    .cinex-slide-content p {
+      color: #F0F0F0;
+      font-size: 1rem;
+      max-width: 500px;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
     }
     .cinex-arrow {
-      position: absolute; 
-      top: 50%; 
-      transform: translateY(-50%); 
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px); 
-      border: 1px solid rgba(255,255,255,0.3); 
-      color: white; 
-      width: 44px; 
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      width: 44px;
       height: 44px;
-      border-radius: 50%; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      font-size: 1.1rem; 
-      cursor: pointer; 
-      z-index: 10; 
-      transition: var(--transition-smooth);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      z-index: 10;
     }
-    .cinex-arrow:hover { 
-      background: var(--black); 
-      border-color: var(--black); 
-    }
-    .cinex-arrow.prev { 
-      left: 25px; 
-    }
-    .cinex-arrow.next { 
-      right: 25px; 
-    }
+    .cinex-arrow.prev { left: 25px; }
+    .cinex-arrow.next { right: 25px; }
 
-    /* Ajustes responsive banner */
-    @media (max-width: 1024px) {
-      .cinex-slide { min-height: 380px; }
-      .cinex-slide-content h2 { font-size: 2.2rem; }
-      .cinex-slide-content { padding: 3rem; }
-    }
-    @media (max-width: 768px) {
-      .cinex-slide { min-height: 280px; }
-      .cinex-arrow { width: 36px; height: 36px; font-size: 0.9rem; }
-      .cinex-arrow.prev { left: 12px; }
-      .cinex-arrow.next { right: 12px; }
-      .cinex-slide-content { padding: 2rem 1.2rem; }
-      .cinex-slide-content h2 { font-size: 1.5rem; }
-      .cinex-slide-content p { font-size: 0.75rem; }
-    }
-
-    /* Skeleton Screen */
-    .skeleton {
-      background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
-      background-size: 200% 100%;
-      animation: loading 1.5s infinite;
-    }
-    body.dark-mode .skeleton {
-      background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
-    }
-    @keyframes loading {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-    .skeleton-slide { 
-      width: 100%; 
-      min-height: 450px; 
-      border-radius: 0; 
-    }
-    .skeleton-card { 
-      height: 180px; 
-      border-radius: 1rem; 
-      margin: 1rem; 
+    .btn-primary {
+      background: #1A1A1A;
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 0.7rem 1.5rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
     }
 
     /* TICKER */
@@ -731,50 +289,34 @@
       align-items: center;
       gap: 8px;
     }
-    .ticker-item i { 
-      color: var(--black); 
-      font-size: 0.8rem; 
-    }
-    .ticker-separator { 
-      width: 1px; 
-      height: 10px; 
-      background-color: #CCCCCC; 
+    .ticker-separator {
+      width: 1px;
+      height: 10px;
+      background-color: #CCCCCC;
     }
 
-    /* NOSOTROS - TEXTO JUSTIFICADO */
+    /* ABOUT */
     .about-section {
       padding: 3rem 1.5rem;
       max-width: 1400px;
       margin: 0 auto;
-      position: relative;
     }
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
       align-items: center;
-      position: relative;
-      z-index: 1;
     }
     .about-text {
-      background: var(--white);
+      background: #FFFFFF;
       padding: 1.5rem;
       border-radius: 1.2rem;
       border: 1px solid var(--border-light);
-      transition: var(--transition-smooth);
-    }
-    .about-text:hover {
-      border-color: var(--dark-gray);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
     }
     .about-text h2 {
       font-size: 1.8rem;
       font-family: 'Playfair Display', serif;
       margin-bottom: 0.8rem;
-      color: var(--black);
-      display: inline-block;
-      cursor: default;
     }
     .about-text p {
       color: var(--gray);
@@ -786,13 +328,26 @@
     .exp-block {
       margin-top: 0.8rem;
       padding-top: 0.8rem;
-      border-top: 2px solid var(--black);
+      border-top: 2px solid #000;
       font-weight: 600;
-      color: var(--dark-gray);
       font-size: 0.85rem;
     }
-    
-    /* ESTADÍSTICAS ANIMADAS */
+    .founders-photo {
+      background: var(--light-gray);
+      border-radius: 1.2rem;
+      padding: 1rem;
+      text-align: center;
+      border: 1px solid var(--border-light);
+    }
+    .founders-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 1rem;
+      border: 3px solid white;
+    }
+
+    /* STATS */
     .stats-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -801,34 +356,22 @@
       padding: 1rem;
       background: var(--light-gray);
       border-radius: 1.2rem;
-      position: relative;
-      z-index: 1;
     }
     .stat-card {
       text-align: center;
       padding: 1rem;
-      background: var(--white);
+      background: #FFFFFF;
       border-radius: 1rem;
-      transition: transform 0.3s;
-    }
-    .stat-card:hover { 
-      transform: translateY(-5px); 
-    }
-    .stat-card i { 
-      font-size: 1.8rem; 
-      color: var(--dark-gray); 
-      margin-bottom: 0.5rem; 
     }
     .stat-number {
       font-size: 1.6rem;
       font-weight: 800;
-      color: var(--black);
       font-family: 'Playfair Display', serif;
     }
-    .stat-label { 
-      color: var(--gray); 
-      font-size: 0.7rem; 
-      margin-top: 0.3rem; 
+    .stat-label {
+      color: var(--gray);
+      font-size: 0.7rem;
+      margin-top: 0.3rem;
     }
     .progress-bar {
       width: 100%;
@@ -841,108 +384,48 @@
     .progress-fill {
       width: 0%;
       height: 100%;
-      background: var(--black);
+      background: #000;
       border-radius: 2px;
       transition: width 1.5s ease-out;
     }
 
-    /* Foto fundadoras */
-    .founders-photo {
-      background: var(--light-gray);
-      border-radius: 1.2rem;
-      padding: 1rem;
-      text-align: center;
-      border: 1px solid var(--border-light);
-      transition: var(--transition-smooth);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .founders-photo:hover {
-      transform: translateY(-5px);
-      border-color: var(--dark-gray);
-      box-shadow: var(--shadow-md);
-    }
-    .photo-card {
-      width: 100%;
-      max-width: 320px;
-      margin: 0 auto;
-    }
-    .founders-img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 1rem;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 3px solid white;
-    }
-    .founders-photo:hover .founders-img {
-      transform: scale(1.02);
-      box-shadow: var(--shadow-md);
-    }
-
-    /* SECCIÓN DE TARJETAS - ACORDEONES */
+    /* SERVICES */
     .services-grid-section {
       padding: 3rem 1.5rem;
       max-width: 1400px;
       margin: 0 auto;
-      position: relative;
     }
     .services-grid-section h2 {
       text-align: center;
       font-size: 1.8rem;
       font-family: 'Playfair Display', serif;
       margin-bottom: 1.5rem;
-      color: var(--black);
-      position: relative;
-      z-index: 1;
     }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
-      position: relative;
-      z-index: 1;
     }
     .service-card {
-      background: var(--white);
+      background: #FFFFFF;
       border-radius: 0.8rem;
       border: 1px solid var(--border-light);
       overflow: hidden;
-      transition: var(--transition-smooth);
       cursor: pointer;
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--dark-gray);
-      box-shadow: var(--shadow-md);
     }
     .service-header {
       padding: 1rem;
       display: flex;
       align-items: center;
       gap: 10px;
-      background: var(--white);
-      transition: background 0.2s;
-    }
-    .service-card:hover .service-header {
-      background: var(--light-gray);
     }
     .service-header i {
       font-size: 1.3rem;
-      color: var(--dark-gray);
-      transition: transform 0.2s;
       min-width: 28px;
-      text-align: center;
-    }
-    .service-card:hover .service-header i {
-      transform: scale(1.1);
     }
     .service-header h3 {
       font-size: 0.9rem;
       font-weight: 700;
-      color: var(--black);
       margin: 0;
       flex: 1;
     }
@@ -971,259 +454,244 @@
       line-height: 1.5;
       font-size: 0.8rem;
       margin-bottom: 0.6rem;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-    .service-content .btn-primary {
-      margin-top: 0.5rem;
-      padding: 0.4rem 0.8rem;
-      font-size: 0.7rem;
     }
 
     /* VIDEO */
-    .video-ai-space { 
-      padding: 1rem 1.5rem 2rem; 
-      max-width: 800px; 
-      margin: 0 auto; 
-      position: relative;
-      z-index: 1;
+    .video-ai-space {
+      padding: 1rem 1.5rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
     }
-    video { 
-      max-width: 100%; 
-      border-radius: 1rem; 
-      box-shadow: var(--shadow-md); 
+    video {
+      max-width: 100%;
+      border-radius: 1rem;
     }
 
-    /* CARRUSEL DE TESTIMONIOS */
-    .testimonial-carousel-section {
+    /* ============================================================
+       TESTIMONIOS - CARRUSEL CON 6 TARJETAS (3 POR PÁGINA)
+       TAURUS II DE PRIMERO
+       ============================================================ */
+    .testimonial-section {
       padding: 3rem 1.5rem;
       background: var(--light-gray);
-      position: relative;
     }
-    .testimonial-carousel-section h2 {
+    .testimonial-section h2 {
       text-align: center;
       font-size: 1.8rem;
       font-family: 'Playfair Display', serif;
-      margin-bottom: 1.2rem;
-      color: var(--black);
+      margin-bottom: 1.5rem;
     }
+    
     .testimonial-carousel-container {
-      max-width: 1400px;
+      max-width: 1200px;
       margin: 0 auto;
       position: relative;
       overflow: hidden;
     }
+    
     .testimonial-carousel-track {
       display: flex;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      gap: 1.5rem;
     }
+    
     .testimonial-carousel-slide {
-      min-width: calc(33.333% - 1.5rem);
-      margin: 0 0.75rem;
+      min-width: calc(33.333% - 1rem);
       flex-shrink: 0;
+      max-width: calc(33.333% - 1rem);
     }
+    
+    /* TARJETA DE TESTIMONIO - ESTILO CARD */
     .testimonial-card {
-      background: var(--white);
-      border-radius: 1rem;
-      padding: 1.2rem;
-      box-shadow: var(--shadow-sm);
-      height: 100%;
+      background: #FFFFFF !important;
+      border-radius: 1rem !important;
+      padding: 1.5rem 1.5rem 1.2rem 1.5rem !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
+      border: 1px solid #E5E5E5 !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+      display: flex !important;
+      flex-direction: column !important;
+      height: 100% !important;
+      min-height: 260px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: hidden !important;
     }
+    .testimonial-card:hover {
+      transform: translateY(-6px) !important;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12) !important;
+    }
+    
+    .testimonial-card .stars {
+      color: #FFB800 !important;
+      margin-bottom: 0.6rem !important;
+      font-size: 0.7rem !important;
+      letter-spacing: 3px !important;
+      flex-shrink: 0 !important;
+    }
+    
+    .testimonial-card .testimonial-text {
+      font-size: 0.82rem !important;
+      line-height: 1.6 !important;
+      color: #4A4A4A !important;
+      flex: 1 !important;
+      word-wrap: break-word !important;
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      white-space: normal !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      text-align: justify !important;
+      text-justify: inter-word !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 6 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      max-height: 10rem !important;
+      min-height: 4rem !important;
+      margin-bottom: 0.3rem !important;
+    }
+    
+    .testimonial-card .testimonial-author {
+      margin-top: 0.6rem !important;
+      border-top: 1px solid #E5E5E5 !important;
+      padding-top: 0.6rem !important;
+      flex-shrink: 0 !important;
+      text-align: left !important;
+    }
+    .testimonial-card .testimonial-author h4 {
+      font-size: 0.85rem !important;
+      font-weight: 700 !important;
+      color: #1A1A1A !important;
+    }
+    .testimonial-card .testimonial-author span {
+      font-size: 0.65rem !important;
+      color: #888888 !important;
+    }
+
+    /* DOTS DEL CARRUSEL */
     .testimonial-dots {
       display: flex;
       justify-content: center;
-      gap: 0.5rem;
-      margin-top: 1.2rem;
+      gap: 0.6rem;
+      margin-top: 1.8rem;
     }
     .dot {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      background: var(--border-medium);
+      background: #D1D1D1;
       cursor: pointer;
-      transition: 0.2s;
+      transition: all 0.3s ease;
+      border: none;
+      padding: 0;
     }
-    .dot.active { 
-      background: var(--black); 
-      width: 18px; 
-      border-radius: 4px; 
+    .dot.active {
+      background: #1A1A1A;
+      width: 28px;
+      border-radius: 5px;
     }
-    .stars { 
-      color: #FFB800; 
-      margin-bottom: 0.6rem; 
-      font-size: 0.65rem; 
-      letter-spacing: 2px; 
+
+    /* APP */
+    .app-highlight {
+      padding: 2rem 1.5rem 2.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
     }
-    .testimonial-card p { 
-      font-size: 0.8rem; 
-      line-height: 1.4; 
+    .app-card {
+      background: #FFFFFF;
+      padding: 1.5rem 1rem;
+      border-radius: 1.2rem;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+      border: 2px solid #25D366;
+    }
+    .app-card i {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    .app-card h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .app-card p {
       color: var(--gray);
-    }
-    .testimonial-author { 
-      margin-top: 0.8rem; 
-      border-top: 1px solid var(--border-light); 
-      padding-top: 0.6rem; 
-    }
-    .testimonial-author h4 { 
-      font-size: 0.85rem; 
-      color: var(--black); 
-    }
-    .testimonial-author span { 
-      font-size: 0.65rem; 
-      color: var(--gray); 
+      font-size: 0.85rem;
+      line-height: 1.4;
     }
 
-    /* APP RESIDENCIAL */
-    .app-highlight { 
-      padding: 2rem 1.5rem 2.5rem; 
-      max-width: 1400px; 
-      margin: 0 auto; 
-      position: relative;
-      z-index: 1;
-    }
-    .app-card { 
-      background: var(--white); 
-      padding: 1.5rem 1rem; 
-      border-radius: 1.2rem; 
-      text-align: center; 
-      max-width: 500px; 
-      margin: 0 auto; 
-      transition: transform 0.3s, box-shadow 0.3s; 
-      position: relative; 
-      overflow: hidden; 
-    }
-    .app-card i { 
-      font-size: 2rem; 
-      color: var(--dark-gray); 
-      margin-bottom: 0.8rem; 
-      display: inline-block; 
-      transition: all 0.3s; 
-    }
-    .app-card h3 { 
-      font-size: 1.3rem; 
-      font-weight: 800; 
-      margin-bottom: 0.6rem; 
-      color: var(--black); 
-      font-family: 'Playfair Display', serif; 
-    }
-    .app-card p { 
-      color: var(--gray); 
-      font-size: 0.85rem; 
-      line-height: 1.4; 
-    }
-
-    /* CONTACTO Y MAPA */
+    /* CONTACT */
     .contact-section {
       padding: 3rem 1.5rem;
-      background: var(--white);
-      position: relative;
-      z-index: 1;
+      background: #FFFFFF;
     }
     .contact-section h2 {
       text-align: center;
       font-size: 1.8rem;
       font-family: 'Playfair Display', serif;
       margin-bottom: 1.2rem;
-      display: inline-block;
-      width: auto;
-      left: 50%;
-      position: relative;
-      transform: translateX(-50%);
-      color: var(--black);
     }
-    .map-contact { 
-      display: grid; 
-      grid-template-columns: 1.1fr 0.9fr; 
-      gap: 1.5rem; 
-      background: var(--light-gray); 
-      border-radius: 1.2rem; 
-      padding: 1.2rem; 
-      box-shadow: var(--shadow-md); 
-      max-width: 1400px; 
-      margin: 0 auto; 
+    .map-contact {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.5rem;
+      background: var(--light-gray);
+      border-radius: 1.2rem;
+      padding: 1.2rem;
+      max-width: 1400px;
+      margin: 0 auto;
     }
-    .map-container { 
-      border-radius: 0.8rem; 
-      overflow: hidden; 
-      min-height: 280px; 
-      transition: var(--transition-smooth); 
-      border: 1px solid var(--border-light); 
+    .map-container {
+      border-radius: 0.8rem;
+      overflow: hidden;
+      min-height: 280px;
+      border: 1px solid var(--border-light);
     }
-    .contact-form-wrapper h3 { 
-      font-size: 1.3rem; 
-      margin-bottom: 0.8rem; 
-      font-family: 'Playfair Display', serif; 
-      color: var(--black); 
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      border: 0;
     }
-    .form-group { 
-      margin-bottom: 0.6rem; 
-      position: relative; 
+    .contact-form-wrapper h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      font-family: 'Playfair Display', serif;
     }
-    .form-control { 
-      width: 100%; 
-      padding: 0.7rem 0.8rem; 
-      border-radius: 0.5rem; 
-      border: 1px solid var(--border-light); 
-      background: var(--white); 
-      font-family: 'Inter', sans-serif; 
-      font-size: 0.8rem; 
-      transition: 0.2s; 
+    .form-group {
+      margin-bottom: 0.6rem;
     }
-    .form-control:focus { 
-      outline: none; 
-      border-color: var(--dark-gray); 
-      box-shadow: 0 0 0 3px rgba(0,0,0,0.05); 
+    .form-control {
+      width: 100%;
+      padding: 0.7rem 0.8rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border-light);
+      background: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
     }
-    .error-message { 
-      color: #e74c3c; 
-      font-size: 0.6rem; 
-      margin-top: 0.2rem; 
-      display: block; 
+    .contact-meta-info {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--gray);
     }
-    .success-message { 
-      background: #27ae60; 
-      color: white; 
-      padding: 0.5rem; 
-      border-radius: 0.5rem; 
-      margin-top: 0.6rem; 
-      text-align: center; 
-      font-size: 0.75rem; 
-    }
-    .spinner { 
-      display: inline-block; 
-      width: 12px; 
-      height: 12px; 
-      border: 2px solid rgba(255,255,255,0.3); 
-      border-radius: 50%; 
-      border-top-color: white; 
-      animation: spin 0.8s linear infinite; 
-      margin-right: 5px; 
-    }
-    @keyframes spin { 
-      to { transform: rotate(360deg); } 
-    }
-    .contact-meta-info { 
-      margin-top: 1rem; 
-      display: grid; 
-      gap: 0.5rem; 
-      font-size: 0.75rem; 
-      color: var(--gray); 
-    }
-    .meta-item i { 
-      color: var(--dark-gray); 
-      margin-right: 6px; 
-      width: 18px; 
-      transition: transform 0.2s; 
+    .meta-item i {
+      margin-right: 6px;
+      width: 18px;
     }
 
-    /* FOOTER CON NEWSLETTER */
+    /* FOOTER */
     footer {
-      background: var(--dark-gray);
+      background: #1A1A1A;
       color: #AAAAAA;
       padding: 2rem 1.5rem 1.2rem;
       margin-top: 2rem;
-      position: relative;
-      z-index: 1;
     }
     .footer-content {
       max-width: 1400px;
@@ -1236,65 +704,46 @@
       border-bottom: 1px solid #333;
       padding-bottom: 1.2rem;
     }
-    .newsletter-section h4 { 
-      color: white; 
-      margin-bottom: 0.6rem; 
-      font-size: 0.85rem; 
+    .newsletter-section h4 {
+      color: white;
+      margin-bottom: 0.6rem;
+      font-size: 0.85rem;
     }
-    .newsletter-form { 
-      display: flex; 
-      gap: 0.5rem; 
-      flex-wrap: wrap; 
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
-    .newsletter-input { 
-      padding: 0.5rem 0.8rem; 
-      border-radius: 2rem; 
-      border: none; 
-      flex: 1; 
-      min-width: 160px; 
-      font-size: 0.75rem; 
+    .newsletter-input {
+      padding: 0.5rem 0.8rem;
+      border-radius: 2rem;
+      border: none;
+      flex: 1;
+      min-width: 160px;
+      font-size: 0.75rem;
     }
-    .btn-small { 
-      padding: 0.5rem 1rem; 
-      font-size: 0.7rem; 
+    .btn-small {
+      padding: 0.5rem 1rem;
+      font-size: 0.7rem;
     }
-    .footer-socials a { 
-      transition: 0.2s; 
+    .footer-socials a {
+      transition: 0.2s;
       display: inline-block;
       margin-left: 1rem;
       font-size: 2rem;
     }
-    .footer-socials a:first-child {
-      color: #1877F2;
+    .footer-socials a:first-child { color: #1877F2; }
+    .footer-socials a:last-child { color: #E4405F; }
+    .footer-copy {
+      text-align: center;
+      font-size: 0.65rem;
+      margin-top: 1rem;
     }
-    .footer-socials a:first-child:hover {
-      color: #0d5bd4;
-      transform: translateY(-3px);
-    }
-    .footer-socials a:last-child {
-      color: #E4405F;
-    }
-    .footer-socials a:last-child:hover {
-      color: #c13535;
-      transform: translateY(-3px);
-    }
-    body.dark-mode .footer-socials a:first-child {
-      color: #3b82f6;
-    }
-    body.dark-mode .footer-socials a:last-child {
-      color: #f06595;
-    }
-    .footer-copy { 
-      text-align: center; 
-      font-size: 0.65rem; 
-      margin-top: 1rem; 
-    }
-    .tech-credit { 
-      text-align: center; 
-      font-size: 0.6rem; 
-      margin-top: 0.5rem; 
-      letter-spacing: 0.5px; 
-      opacity: 0.7; 
+    .tech-credit {
+      text-align: center;
+      font-size: 0.6rem;
+      margin-top: 0.5rem;
+      opacity: 0.7;
     }
 
     /* WHATSAPP FLOAT */
@@ -1312,138 +761,95 @@
       color: white;
       font-size: 1.8rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: 0.2s;
       z-index: 1001;
       text-decoration: none;
     }
-    .whatsapp-float:hover { 
-      transform: scale(1.05); 
-      background: #1da15a; 
-    }
 
-    /* Efecto de burbuja con logo */
-    .click-bubble {
-      position: fixed;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: bubblePop 0.8s ease-out forwards;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    .skeleton {
+      background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
     }
-    
-    .click-bubble svg {
-      width: 65%;
-      height: 65%;
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
     }
-    
-    .click-bubble svg path {
-      stroke: currentColor;
-      stroke-width: 10;
-      fill: none;
-    }
-    
-    @keyframes bubblePop {
-      0% { transform: scale(0); opacity: 1; }
-      40% { transform: scale(1.15); opacity: 0.9; }
-      70% { transform: scale(1); opacity: 0.6; }
-      100% { transform: scale(1.3); opacity: 0; }
+    .skeleton-slide {
+      width: 100%;
+      min-height: 450px;
+      border-radius: 0;
     }
 
     /* RESPONSIVE */
-    @media (max-width: 1140px) { 
-      .about-grid { grid-template-columns: 1fr; } 
+    @media (max-width: 1140px) {
+      .about-grid { grid-template-columns: 1fr; }
       .map-contact { grid-template-columns: 1fr; }
-      .testimonial-carousel-slide { min-width: calc(50% - 1.5rem); }
-      .stats-container { grid-template-columns: 1fr; gap: 0.8rem; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    
-    @media (max-width: 768px) {
-      .navbar { padding: 0.7rem 1rem; }
-      .logo-svg-container { width: 50px; height: 50px; }
-      .logo-text h1 { font-size: 1.1rem; }
-      .logo-text p { font-size: 0.55rem; }
-      .dark-mode-toggle { width: 38px; height: 38px; font-size: 0.9rem; }
-      .saas-access-btn { padding: 0.5rem 1rem; font-size: 0.75rem; }
-      .saas-access-btn i { font-size: 0.8rem; }
-      
-      .menu-toggle { display: flex; }
-      .nav-links { 
-        display: none; 
-        flex-direction: column; 
-        position: absolute; 
-        top: 100%; 
-        left: 0; 
-        width: 100%; 
-        background: #000000; 
-        padding: 0.8rem; 
-        gap: 0.8rem; 
-        box-shadow: var(--shadow-md); 
-        border-top: 1px solid rgba(255,255,255,0.1); 
+      .testimonial-carousel-slide { 
+        min-width: calc(50% - 0.75rem);
+        max-width: calc(50% - 0.75rem);
       }
-      .nav-links a { 
-        color: #FFFFFF !important; 
-        padding: 0.4rem 0; 
-        font-size: 0.85rem; 
-        text-align: center;
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-container { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #000000;
+        padding: 0.8rem;
+        gap: 0.8rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
       }
       .nav-links.active { display: flex; }
-      
+      .nav-links a { text-align: center; }
+
       .services-grid { grid-template-columns: 1fr; }
-      .testimonial-carousel-slide { min-width: calc(100% - 1rem); }
-      .stats-container { padding: 0.8rem; }
-      .service-header { padding: 0.8rem; }
-      .service-header h3 { font-size: 0.85rem; }
-      .service-content p { font-size: 0.75rem; }
-      .whatsapp-float { bottom: 15px; right: 15px; width: 48px; height: 48px; font-size: 1.5rem; }
-      .about-section { padding: 2rem 1rem; }
-      .services-grid-section { padding: 2rem 1rem; }
-      .testimonial-carousel-section { padding: 2rem 1rem; }
-      .contact-section { padding: 2rem 1rem; }
-      .video-ai-space { padding: 1rem 1rem 1.5rem; }
-      .app-highlight { padding: 1.5rem 1rem 2rem; }
-      .ticker-item { font-size: 0.65rem; }
-      .ticker-item i { font-size: 0.7rem; }
-      .ticker-container { gap: 0.8rem; }
-      .footer-socials a { font-size: 1.8rem; margin-left: 0.8rem; }
+      .testimonial-carousel-slide { 
+        min-width: calc(100% - 0.5rem) !important;
+        max-width: calc(100% - 0.5rem) !important;
+      }
+      .testimonial-card .testimonial-text {
+        -webkit-line-clamp: 6 !important;
+        max-height: 9rem !important;
+        font-size: 0.75rem !important;
+        min-height: 3.5rem !important;
+      }
+      .testimonial-card { min-height: 220px !important; padding: 1.2rem !important; }
+      .cinex-slide-content h2 { font-size: 1.5rem; }
+      .cinex-slide { min-height: 280px; }
+      .cinex-arrow { width: 36px; height: 36px; font-size: 0.9rem; }
+      .cinex-arrow.prev { left: 12px; }
+      .cinex-arrow.next { right: 12px; }
+      .cinex-slide-content { padding: 2rem 1.2rem; }
       .footer-content { flex-direction: column; text-align: center; }
       .newsletter-form { justify-content: center; }
-      .logo-area:hover { transform: translateY(-2px); }
-      .logo-area:hover .logo-svg-container { transform: scale(1.05); }
-      .services-grid-section h2, .testimonial-carousel-section h2, .contact-section h2 {
-        font-size: 1.5rem;
-      }
-      .about-text h2 { font-size: 1.5rem; }
-      .stat-number { font-size: 1.4rem; }
-      .stat-card i { font-size: 1.5rem; }
-      .click-bubble { width: 70px; height: 70px; }
-      .click-bubble svg { width: 60%; height: 60%; }
     }
-    
+
     @media (max-width: 480px) {
-      .navbar { padding: 0.6rem 0.8rem; }
       .logo-svg-container { width: 42px; height: 42px; }
       .logo-text h1 { font-size: 0.9rem; }
-      .dark-mode-toggle { width: 34px; height: 34px; font-size: 0.8rem; }
+      .testimonial-card .testimonial-text {
+        -webkit-line-clamp: 5 !important;
+        max-height: 7rem !important;
+        font-size: 0.7rem !important;
+        line-height: 1.5 !important;
+        min-height: 3rem !important;
+      }
+      .testimonial-card { min-height: 180px !important; padding: 1rem !important; }
       .saas-access-btn { padding: 0.4rem 0.8rem; font-size: 0.7rem; }
       .cinex-slide-content h2 { font-size: 1.2rem; }
-      .cinex-slide-content p { font-size: 0.7rem; }
-      .service-header h3 { font-size: 0.8rem; }
-      .service-header i { font-size: 1.1rem; min-width: 24px; }
-      .footer-socials a { font-size: 1.5rem; margin-left: 0.6rem; }
-      .click-bubble { width: 55px; height: 55px; }
-      .click-bubble svg { width: 55%; height: 55%; }
     }
   </style>
 </head>
 <body>
 
-<!-- LOGO DE AGUA GIGANTE -->
+<!-- LOGO DE AGUA -->
 <div class="watermark">
   <svg viewBox="0 0 320 250">
     <path d="M 35,200 A 135,135 0 0,1 270,65" stroke-linecap="round"/>
@@ -1464,7 +870,7 @@
         </svg>
       </div>
       <div class="logo-text">
-        <h1 class="pulse-text"><span class="cinex-glow-text">Andrade y Asociados</span></h1>
+        <h1>Andrade y Asociados</h1>
         <p>Administradora de Condominios</p>
       </div>
     </a>
@@ -1477,38 +883,36 @@
       <a href="#contacto">Contacto</a>
     </div>
     <div class="header-buttons">
-      <button class="saas-access-btn" id="saasAccessBtn">
-        <i class="fas fa-chalkboard-user"></i> Sistema Administrativo
-      </button>
+      <button class="saas-access-btn" id="saasAccessBtn"><i class="fas fa-chalkboard-user"></i> Sistema Administrativo</button>
       <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
     </div>
   </div>
 </nav>
 
-<!-- HERO BANNER CON SKELETON -->
+<!-- HERO BANNER -->
 <div id="inicio" class="cinex-banner-container">
-  <div id="hero-skeleton" class="skeleton skeleton-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5;"></div>
-  <div id="hero-content" style="display: none;">
+  <div id="hero-skeleton" class="skeleton skeleton-slide" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:5;"></div>
+  <div id="hero-content" style="display:none;">
     <button class="cinex-arrow prev" id="slider-prev"><i class="fas fa-chevron-left"></i></button>
     <button class="cinex-arrow next" id="slider-next"><i class="fas fa-chevron-right"></i></button>
     <div class="cinex-slider" id="cinex-slider">
       <div class="cinex-slide" style="background-image: url('avila.jpg');">
         <div class="cinex-slide-content">
-          <h2>Gestión Inmobiliaria <span class="cinex-glow-text">De Alto Impacto</span></h2>
+          <h2>Gestión Inmobiliaria De Alto Impacto</h2>
           <p>Transparencia absoluta, tecnología de vanguardia y respaldo legal integral para la tranquilidad de tu patrimonio residencial en Caracas.</p>
           <a href="#contacto" class="btn-primary"><i class="fas fa-calendar-check"></i> Solicitar Asesoría</a>
         </div>
       </div>
       <div class="cinex-slide" style="background-image: url('https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?auto=format&fit=crop&w=1950&q=80');">
         <div class="cinex-slide-content">
-          <h2>Finanzas Claras <span class="cinex-glow-text">Cuentas Auditables</span></h2>
+          <h2>Finanzas Claras Cuentas Auditables</h2>
           <p>Reducimos la morosidad mediante procesos automatizados de cobranza y reportes financieros interactivos disponibles 24/7.</p>
           <a href="#contacto" class="btn-primary"><i class="fas fa-layer-group"></i> Ver Soluciones</a>
         </div>
       </div>
       <div class="cinex-slide" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1950&q=80');">
         <div class="cinex-slide-content">
-          <h2>Mantenimiento Proactivo <span class="cinex-glow-text">Valor Sostenible</span></h2>
+          <h2>Mantenimiento Proactivo Valor Sostenible</h2>
           <p>Preservamos la infraestructura de tu edificio con ingenieros expertos y planes preventivos diseñados a la medida.</p>
           <a href="#contacto" class="btn-primary"><i class="fas fa-phone-alt"></i> Contáctanos</a>
         </div>
@@ -1534,19 +938,16 @@
 <section id="nosotros" class="about-section">
   <div class="about-grid">
     <div class="about-text" data-aos="fade-right">
-      <h2 class="title-underline pulse-text"><span class="shimmer-dark">Nosotros</span></h2>
+      <h2>Nosotros</h2>
       <p>Un grupo de profesionales preocupados por la calidad del servicio, nos reunimos hace 10 años, con la finalidad de llevar adelante un proyecto de administración de nuestro condominio, donde residimos, de una forma amable, positiva, constructiva y así mejorar la convivencia dentro del edificio.</p>
       <p>Identificamos las necesidades comunes, incorporamos apoyo tecnológico, rapidez en las respuestas a la comunidad y durante la pandemia fuimos contactados por otras comunidades que solicitaron nuestro apoyo y hemos replicado el modelo en diversas ocasiones, por lo que con honestidad, orgullo y transparencia nuestra gestión administrativa se ha expandido con éxito.</p>
-      <div class="exp-block"><i class="fas fa-calendar-alt" style="margin-right: 8px;"></i>+10 años de experiencia</div>
+      <div class="exp-block"><i class="fas fa-calendar-alt"></i> +10 años de experiencia</div>
     </div>
     <div class="founders-photo" data-aos="fade-left">
-      <div class="photo-card">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Socias Fundadoras" class="founders-img">
-      </div>
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Socias Fundadoras" class="founders-img">
     </div>
   </div>
-  
-  <!-- ESTADÍSTICAS ANIMADAS -->
+
   <div class="stats-container" id="stats-container">
     <div class="stat-card"><i class="fas fa-building"></i><div class="stat-number"><span id="stat1">0</span>+</div><div class="stat-label">Condominios Administrados</div><div class="progress-bar"><div class="progress-fill" id="progress1"></div></div></div>
     <div class="stat-card"><i class="fas fa-user-check"></i><div class="stat-number"><span id="stat2">0</span>+</div><div class="stat-label">Clientes Satisfechos</div><div class="progress-bar"><div class="progress-fill" id="progress2"></div></div></div>
@@ -1554,9 +955,9 @@
   </div>
 </section>
 
-<!-- SECCIÓN DE TARJETAS - 3 POR LÍNEA CON EFECTO ACORDEÓN -->
+<!-- SERVICIOS -->
 <div class="services-grid-section" id="servicios-info">
-  <h2 class="pulse-text">Información y <span class="shimmer-dark">Servicios</span></h2>
+  <h2>Información y Servicios</h2>
   <div class="services-grid">
     <div class="service-card" data-aos="fade-up"><div class="service-header"><i class="fas fa-bullseye"></i><h3>Misión</h3><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div><div class="service-content"><p>El compromiso compartido dentro de la comunidad (copropietarios + administradora + proveedores + asociaciones de vecinos) permitirá alcanzar las metas concretas y alcanzables, un paso a la vez, para el progreso del colectivo.</p></div></div>
     <div class="service-card" data-aos="fade-up" data-aos-delay="50"><div class="service-header"><i class="fas fa-eye"></i><h3>Visión</h3><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div><div class="service-content"><p>Nuestra visión es ser reconocidos como el condominio de referencia en nuestra área, ofreciendo un estilo de vida excepcional y un ambiente enriquecedor. Aspiramos a ser una comunidad unida, donde los residentes se sientan orgullosos de vivir.</p></div></div>
@@ -1583,43 +984,115 @@
 
 <!-- APP RESIDENCIAL -->
 <div class="app-highlight">
-  <div class="app-card glow-card" data-aos="fade-up">
+  <div class="app-card" data-aos="fade-up">
     <i class="fas fa-mobile-alt"></i>
-    <h3 class="pulse-text"><span class="shimmer-dark">App Residencial</span></h3>
+    <h3>App Residencial</h3>
     <p>Portal web y móvil para pago de alícuotas, consulta de deudas y descarga de recibos digitales instantáneos, reserva de áreas comunes y comunicación directa con la administración.</p>
   </div>
 </div>
 
-<!-- TESTIMONIOS -->
-<div id="testimonios" class="testimonial-carousel-section">
-  <h2 class="pulse-text">La voz de <span class="shimmer-dark">nuestras comunidades</span></h2>
-  <div id="testimonios-skeleton" style="display: flex; gap: 1rem; justify-content: center;"><div class="skeleton skeleton-card" style="width: 300px;"></div><div class="skeleton skeleton-card" style="width: 300px;"></div><div class="skeleton skeleton-card" style="width: 300px;"></div></div>
-  <div id="testimonios-content" style="display: none;">
-    <div class="testimonial-carousel-container">
-      <div class="testimonial-carousel-track" id="testimonialTrack">
-        <div class="testimonial-carousel-slide"><div class="testimonial-card"><div class="stars">★★★★★</div><p>"La claridad en las cuentas nos devolvió la paz. Redujeron la morosidad en un 40%."</p><div class="testimonial-author"><h4>María Eugenia R.</h4><span>Torres del Parque</span></div></div></div>
-        <div class="testimonial-carousel-slide"><div class="testimonial-card"><div class="stars">★★★★★</div><p>"La app es muy amigable. Puedo reservar áreas y pagar desde el móvil."</p><div class="testimonial-author"><h4>Fernando L.</h4><span>Condominio Alameda</span></div></div></div>
-        <div class="testimonial-carousel-slide"><div class="testimonial-card"><div class="stars">★★★★★</div><p>"Respuesta rápida ante emergencias. Solucionaron una avería crítica en tiempo récord."</p><div class="testimonial-author"><h4>Carolina M.</h4><span>Edif. Centro</span></div></div></div>
-        <div class="testimonial-carousel-slide"><div class="testimonial-card"><div class="stars">★★★★★</div><p>"Excelente gestión, siempre atentos a las necesidades de la comunidad."</p><div class="testimonial-author"><h4>Roberto A.</h4><span>Residencias Plaza</span></div></div></div>
+<!-- ============================================================
+TESTIMONIOS - CARRUSEL CON 6 TARJETAS (TAURUS II DE PRIMERO)
+============================================================ -->
+<section id="testimonios" class="testimonial-section">
+  <h2>La voz de <span style="color:#1A1A1A;">nuestras comunidades</span></h2>
+  
+  <div class="testimonial-carousel-container">
+    <div class="testimonial-carousel-track" id="testimonialTrack">
+      
+      <!-- Tarjeta 1 - RESIDENCIAS TAURUS II (PRIMERO) -->
+      <div class="testimonial-carousel-slide">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Saludos y bendiciones para todos ustedes. En nombre de las Residencias Taurus II, queremos darle las gracias por todo lo que hemos logrado en estos dos años de trabajo arduo, difícil, pero con unos resultados increíbles. Asesoramiento impecable, logramos bajar el índice de morosidad gracias a su departamento de cobranza que ha sido constante y de metodología eficaz. Hemos solventado juntos problemas que creíamos imposibles de arreglar. Estamos muy agradecidos y complacidos con su trabajo. Mil gracias, mil bendiciones y esperamos continuar con ustedes muchos años más."</p>
+          <div class="testimonial-author">
+            <h4>Junta de Condominio</h4>
+            <span>Residencias Taurus II ⭐</span>
+          </div>
+        </div>
       </div>
+      
+      <!-- Tarjeta 2 -->
+      <div class="testimonial-carousel-slide">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"La reunión muy buena ayer. Excelente quedó todo concretado."</p>
+          <div class="testimonial-author">
+            <h4>Propietario</h4>
+            <span>Puerta de Hierro</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tarjeta 3 -->
+      <div class="testimonial-carousel-slide">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Quería agradecer a Marina y Johany por la Asamblea del día de ayer. Por ahora no se cumplió el objetivo, pero estamos más cerca."</p>
+          <div class="testimonial-author">
+            <h4>Propietario</h4>
+            <span>Edificio · Caracas</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tarjeta 4 -->
+      <div class="testimonial-carousel-slide">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Agradezco la moderación y los informes de gestión presentados anoche. Quedamos a la espera del acta para su publicación."</p>
+          <div class="testimonial-author">
+            <h4>Propietario</h4>
+            <span>Edificio · Caracas</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tarjeta 5 -->
+      <div class="testimonial-carousel-slide">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Fue una buena reunión a pesar de que no se logró el objetivo de la nueva JDC. Esta semana haremos otra y ya hay postulación."</p>
+          <div class="testimonial-author">
+            <h4>Propietario</h4>
+            <span>Junta de Condominio</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tarjeta 6 -->
+      <div class="testimonial-carousel-slide">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Es una propuesta que hicimos la semana pasada. La reunión muy buena ayer."</p>
+          <div class="testimonial-author">
+            <h4>Propietario</h4>
+            <span>Res Vista Real</span>
+          </div>
+        </div>
+      </div>
+      
     </div>
-    <div class="testimonial-dots" id="testimonialDots"></div>
   </div>
-</div>
+  
+  <div class="testimonial-dots" id="testimonialDots"></div>
+</section>
 
-<!-- CONTACTO Y MAPA -->
+<!-- CONTACTO -->
 <section id="contacto" class="contact-section">
-  <h2 class="title-underline pulse-text">Conectemos <span class="shimmer-dark">hoy</span></h2>
+  <h2>Conectemos hoy</h2>
   <div class="map-contact">
-    <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.27546879811!2d-66.8822404!3d10.4817498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a58c27c59c59d%3A0x88326f6f0a6edaf5!2sMinicentro%20Colinas!5e0!3m2!1ses!2sve!4v1711057897523!5m2!1ses!2sve" width="100%" height="100%" style="border:0;" allowfullscreen=""></iframe></div>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.27546879811!2d-66.8822404!3d10.4817498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a58c27c59c59d%3A0x88326f6f0a6edaf5!2sMinicentro%20Colinas!5e0!3m2!1ses!2sve!4v1711057897523!5m2!1ses!2sve" allowfullscreen=""></iframe>
+    </div>
     <div class="contact-form-wrapper">
-      <h3 class="pulse-text"><span class="shimmer-dark">Escribenos</span></h3>
+      <h3>Escribenos</h3>
       <form id="contactForm">
-        <div class="form-group"><input type="text" id="nombre" class="form-control" placeholder="Nombre completo"><span class="error-message" id="nombreError"></span></div>
-        <div class="form-group"><input type="email" id="email" class="form-control" placeholder="Correo electrónico"><span class="error-message" id="emailError"></span></div>
-        <div class="form-group"><input type="text" id="condominio" class="form-control" placeholder="Nombre del condominio"><span class="error-message" id="condominioError"></span></div>
-        <div class="form-group"><textarea id="mensaje" class="form-control" rows="3" placeholder="Mensaje"></textarea><span class="error-message" id="mensajeError"></span></div>
-        <button type="submit" class="btn-primary" id="submitBtn" style="width:100%; justify-content:center;">Enviar Mensaje</button>
+        <div class="form-group"><input type="text" id="nombre" class="form-control" placeholder="Nombre completo"></div>
+        <div class="form-group"><input type="email" id="email" class="form-control" placeholder="Correo electrónico"></div>
+        <div class="form-group"><input type="text" id="condominio" class="form-control" placeholder="Nombre del condominio"></div>
+        <div class="form-group"><textarea id="mensaje" class="form-control" rows="3" placeholder="Mensaje"></textarea></div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Enviar Mensaje</button>
         <div id="formMessage"></div>
       </form>
       <div class="contact-meta-info">
@@ -1644,12 +1117,8 @@
       <div id="newsletterMessage"></div>
     </div>
     <div class="footer-socials">
-      <a href="https://www.facebook.com/profile.php?id=61590911481877" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
+      <a href="https://www.facebook.com/profile.php?id=61590911481877" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
   <div class="footer-copy">
@@ -1681,11 +1150,8 @@
     }
   });
 
-  // SISTEMA ADMINISTRATIVO - REDIRECCIÓN DIRECTA A dashboard.html
-  const saasAccessBtn = document.getElementById('saasAccessBtn');
-  
-  saasAccessBtn.addEventListener('click', () => {
-    // Redirige directamente al dashboard con iframe de igemas
+  // SISTEMA ADMINISTRATIVO
+  document.getElementById('saasAccessBtn').addEventListener('click', () => {
     window.location.href = 'dashboard.html';
   });
 
@@ -1704,43 +1170,10 @@
     });
   });
 
-  // EFECTO BURBUJA CON LOGO
-  function createClickBubble(x, y) {
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    const bubbleColor = isDarkMode ? '#FFFFFF' : '#1A1A1A';
-    
-    const bubble = document.createElement('div');
-    bubble.className = 'click-bubble';
-    bubble.style.left = (x - 50) + 'px';
-    bubble.style.top = (y - 50) + 'px';
-    bubble.style.backgroundColor = isDarkMode ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.06)';
-    bubble.style.border = `2px solid ${bubbleColor}`;
-    bubble.style.color = bubbleColor;
-    
-    bubble.innerHTML = `
-      <svg viewBox="0 0 320 250">
-        <path d="M 35,200 A 135,135 0 0,1 270,65" stroke-linecap="round"/>
-        <path d="M 40,220 L 40,210 L 145,120 L 235,210" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 145,160 L 210,105 L 290,185 L 290,210" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    `;
-    
-    document.body.appendChild(bubble);
-    setTimeout(() => bubble.remove(), 800);
-  }
-
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.saas-access-btn')) {
-      createClickBubble(e.clientX, e.clientY);
-    }
-  });
-
-  // SKELETON SCREEN
+  // SKELETON
   setTimeout(() => {
     document.getElementById('hero-skeleton').style.display = 'none';
     document.getElementById('hero-content').style.display = 'block';
-    document.getElementById('testimonios-skeleton').style.display = 'none';
-    document.getElementById('testimonios-content').style.display = 'block';
     initSlider();
     initTestimonialCarousel();
   }, 1500);
@@ -1761,29 +1194,77 @@
     updateSlider();
   }
 
-  // TESTIMONIAL CAROUSEL
+  // TESTIMONIAL CAROUSEL - 6 TARJETAS (2 PÁGINAS DE 3)
   function initTestimonialCarousel() {
     const track = document.getElementById('testimonialTrack');
     const slides = Array.from(document.querySelectorAll('.testimonial-carousel-slide'));
     const dotsContainer = document.getElementById('testimonialDots');
     let currentIndex = 0;
     let autoCarousel;
-    const getSlidesPerView = () => window.innerWidth < 768 ? 1 : window.innerWidth < 1140 ? 2 : 3;
+    
+    const getSlidesPerView = () => {
+      if (window.innerWidth < 768) return 1;
+      if (window.innerWidth < 1140) return 2;
+      return 3;
+    };
+    
     function updateCarousel() {
       const slideWidth = slides[0]?.offsetWidth + 24 || 400;
       track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-      document.querySelectorAll('.dot').forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+      document.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
     }
-    function createDots() { const total = Math.ceil(slides.length / getSlidesPerView()); dotsContainer.innerHTML = ''; for(let i = 0; i < total; i++) { const dot = document.createElement('div'); dot.classList.add('dot'); if(i === currentIndex) dot.classList.add('active'); dot.addEventListener('click', () => { currentIndex = i; updateCarousel(); resetCarouselAuto(); }); dotsContainer.appendChild(dot); } }
-    function nextSlide() { const max = Math.ceil(slides.length / getSlidesPerView()) - 1; if(currentIndex < max) currentIndex++; else currentIndex = 0; updateCarousel(); }
-    function resetCarouselAuto() { clearInterval(autoCarousel); autoCarousel = setInterval(nextSlide, 5000); }
-    window.addEventListener('resize', () => { setTimeout(() => { updateCarousel(); createDots(); }, 100); });
+    
+    function createDots() {
+      const total = Math.ceil(slides.length / getSlidesPerView());
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < total; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('dot');
+        if (i === currentIndex) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateCarousel();
+          resetCarouselAuto();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function nextSlide() {
+      const max = Math.ceil(slides.length / getSlidesPerView()) - 1;
+      if (currentIndex < max) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
+      updateCarousel();
+    }
+    
+    function resetCarouselAuto() {
+      clearInterval(autoCarousel);
+      autoCarousel = setInterval(nextSlide, 5000);
+    }
+    
     createDots();
     autoCarousel = setInterval(nextSlide, 5000);
-    updateCarousel();
+    
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const max = Math.ceil(slides.length / getSlidesPerView()) - 1;
+        if (currentIndex > max) currentIndex = max;
+        createDots();
+        updateCarousel();
+      }, 200);
+    });
+    
+    setTimeout(updateCarousel, 100);
   }
 
-  // ACORDEONES DE TARJETAS
+  // ACORDEONES
   document.querySelectorAll('.service-card').forEach(card => {
     const header = card.querySelector('.service-header');
     header.addEventListener('click', () => {
@@ -1791,7 +1272,7 @@
     });
   });
 
-  // ESTADÍSTICAS ANIMADAS
+  // ESTADÍSTICAS
   const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
@@ -1820,51 +1301,30 @@
     requestAnimationFrame(step);
   }
 
-  // VALIDACIÓN FORMULARIO CONTACTO
-  const contactForm = document.getElementById('contactForm');
-  contactForm.addEventListener('submit', async (e) => {
+  // FORMULARIO CONTACTO
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    let isValid = true;
-    const nombre = document.getElementById('nombre');
-    const email = document.getElementById('email');
-    const condominio = document.getElementById('condominio');
-    const mensaje = document.getElementById('mensaje');
-    const nombreError = document.getElementById('nombreError');
-    const emailError = document.getElementById('emailError');
-    const condominioError = document.getElementById('condominioError');
-    const mensajeError = document.getElementById('mensajeError');
-    if(!nombre.value.trim()) { nombreError.textContent = 'Nombre requerido'; nombre.classList.add('error'); isValid = false; } else { nombreError.textContent = ''; nombre.classList.remove('error'); nombre.classList.add('success'); }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(!emailRegex.test(email.value)) { emailError.textContent = 'Email inválido'; email.classList.add('error'); isValid = false; } else { emailError.textContent = ''; email.classList.remove('error'); email.classList.add('success'); }
-    if(!condominio.value.trim()) { condominioError.textContent = 'Nombre del condominio requerido'; condominio.classList.add('error'); isValid = false; } else { condominioError.textContent = ''; condominio.classList.remove('error'); condominio.classList.add('success'); }
-    if(!mensaje.value.trim()) { mensajeError.textContent = 'Mensaje requerido'; mensaje.classList.add('error'); isValid = false; } else { mensajeError.textContent = ''; mensaje.classList.remove('error'); mensaje.classList.add('success'); }
-    if(isValid) {
-      const btn = document.getElementById('submitBtn');
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '<span class="spinner"></span> Enviando...';
-      btn.disabled = true;
-      setTimeout(() => {
-        document.getElementById('formMessage').innerHTML = '<div class="success-message">¡Mensaje enviado con éxito! Nos comunicaremos en breve.</div>';
-        contactForm.reset();
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-        setTimeout(() => document.getElementById('formMessage').innerHTML = '', 5000);
-      }, 1500);
-    }
+    const btn = this.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = 'Enviando...';
+    btn.disabled = true;
+    setTimeout(() => {
+      document.getElementById('formMessage').innerHTML = '<div style="background:#27ae60;color:white;padding:0.5rem;border-radius:0.5rem;margin-top:0.6rem;text-align:center;font-size:0.75rem;">¡Mensaje enviado con éxito!</div>';
+      this.reset();
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      setTimeout(() => document.getElementById('formMessage').innerHTML = '', 5000);
+    }, 1500);
   });
 
   // NEWSLETTER
-  const newsletterForm = document.getElementById('newsletterForm');
-  newsletterForm.addEventListener('submit', (e) => {
+  document.getElementById('newsletterForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const email = document.getElementById('newsletterEmail');
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(emailRegex.test(email.value)) {
-      document.getElementById('newsletterMessage').innerHTML = '<div class="success-message" style="margin-top:0.5rem; padding:0.5rem;">¡Suscripción exitosa!</div>';
+    if(email.value) {
+      document.getElementById('newsletterMessage').innerHTML = '<div style="background:#27ae60;color:white;padding:0.5rem;border-radius:0.5rem;margin-top:0.5rem;text-align:center;font-size:0.75rem;">¡Suscripción exitosa!</div>';
       email.value = '';
       setTimeout(() => document.getElementById('newsletterMessage').innerHTML = '', 3000);
-    } else {
-      document.getElementById('newsletterMessage').innerHTML = '<div style="color:#e74c3c; margin-top:0.5rem;">Email inválido</div>';
     }
   });
 </script>
