@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Andrade y Asociados | Administración de Condominios</title>
   
-  <link rel="icon" type="image/svg+xml" href="andrade.svg">
-  <link rel="shortcut icon" href="andrade.svg">
-  <link rel="apple-touch-icon" href="andrade.svg">
+  <!-- PREFETCH Y PRECONNECT PARA OPTIMIZACIÓN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  
+  <!-- FAVICON ACTUALIZADO - VERSIÓN 17 (LÍNEAS MÁS GRUESAS Y NEGRAS) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=17">
+  <link rel="shortcut icon" href="favicon.svg?v=17">
+  <link rel="apple-touch-icon" href="favicon.svg?v=17">
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -21,12 +28,276 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: #FFFFFF;
       color: #1A1A1A;
       scroll-behavior: smooth;
       overflow-x: hidden;
+      transition: background 0.3s ease, color 0.3s ease;
     }
+
+    /* ===== MODO OSCURO ===== */
+    body.dark-mode {
+      background: #121212;
+      color: #E0E0E0;
+    }
+
+    body.dark-mode .watermark svg path {
+      stroke: #E0E0E0;
+    }
+
+    body.dark-mode .navbar {
+      background: #1A1A1A;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    body.dark-mode .logo-text h1 {
+      color: #FFFFFF;
+    }
+
+    body.dark-mode .logo-text p {
+      color: #AAAAAA;
+    }
+
+    body.dark-mode .nav-links a {
+      color: #E0E0E0 !important;
+    }
+
+    body.dark-mode .saas-access-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #E0E0E0;
+    }
+
+    body.dark-mode .dark-mode-toggle {
+      background: rgba(255,255,255,0.05);
+      color: #E0E0E0;
+    }
+
+    body.dark-mode .menu-toggle span {
+      background-color: #E0E0E0;
+    }
+
+    body.dark-mode .cinex-ticker {
+      background: #1E1E1E;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+
+    body.dark-mode .cinex-ticker .ticker-item {
+      color: #AAAAAA;
+    }
+
+    body.dark-mode .cinex-ticker .ticker-separator {
+      background-color: #444;
+    }
+
+    body.dark-mode .about-text {
+      background: #1E1E1E;
+      border: 1px solid #333;
+    }
+
+    body.dark-mode .about-text h2 {
+      color: #FFFFFF;
+    }
+
+    body.dark-mode .about-text p {
+      color: #BBBBBB;
+    }
+
+    body.dark-mode .about-text .exp-block {
+      border-top-color: #444;
+    }
+
+    body.dark-mode .founders-photo {
+      background: #1E1E1E;
+      border: 1px solid #333;
+    }
+
+    body.dark-mode .stats-container {
+      background: #1E1E1E;
+    }
+
+    body.dark-mode .stat-card {
+      background: #252525;
+    }
+
+    body.dark-mode .stat-card .stat-number {
+      color: #FFFFFF;
+    }
+
+    body.dark-mode .stat-card .stat-label {
+      color: #AAAAAA;
+    }
+
+    body.dark-mode .stat-card .progress-bar {
+      background: #444;
+    }
+
+    body.dark-mode .stat-card .progress-fill {
+      background: #FFFFFF;
+    }
+
+    body.dark-mode .services-grid-section h2 {
+      color: #FFFFFF;
+    }
+
+    body.dark-mode .service-card {
+      background: #1E1E1E;
+      border: 1px solid #333;
+    }
+
+    body.dark-mode .service-card .service-header h3 {
+      color: #FFFFFF;
+    }
+
+    body.dark-mode .service-card .service-header i {
+      color: #FFFFFF;
+    }
+
+    body.dark-mode .service-card .service-header .toggle-icon {
+      color: #AAAAAA;
+    }
+
+    body.dark-mode .service-card.active .service-content {
+      border-top-color: #333;
+    }
+
+    body.dark-mode .service-card .service-content p {
+      color: #BBBBBB;
+    }
+
+    body.dark-mode .service-card .btn-primary {
+      background: #333;
+    }
+
+    body.dark-mode .testimonial-section {
+      background: #1A1A1A;
+    }
+
+    body.dark-mode .testimonial-section h2 {
+      color: #FFFFFF;
+    }
+
+    body.dark-mode .testimonial-section h2 span {
+      color: #FFFFFF !important;
+    }
+
+    body.dark-mode .testimonial-card {
+      background: #1E1E1E !important;
+      border: 1px solid #333 !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+    }
+
+    body.dark-mode .testimonial-card .testimonial-text {
+      color: #CCCCCC !important;
+    }
+
+    body.dark-mode .testimonial-card .testimonial-author h4 {
+      color: #FFFFFF !important;
+    }
+
+    body.dark-mode .testimonial-card .testimonial-author {
+      border-top-color: #333 !important;
+    }
+
+    body.dark-mode .testimonial-card .testimonial-author span {
+      color: #888888 !important;
+    }
+
+    body.dark-mode .dot {
+      background: #555;
+    }
+
+    body.dark-mode .dot.active {
+      background: #FFFFFF;
+    }
+
+    body.dark-mode .app-card {
+      background: #1E1E1E;
+      border-color: #25D366;
+    }
+
+    body.dark-mode .app-card h3 {
+      color: #FFFFFF;
+    }
+
+    body.dark-mode .app-card p {
+      color: #BBBBBB;
+    }
+
+    body.dark-mode .contact-section {
+      background: #121212;
+    }
+
+    body.dark-mode .contact-section h2 {
+      color: #FFFFFF;
+    }
+
+    body.dark-mode .map-contact {
+      background: #1E1E1E;
+    }
+
+    body.dark-mode .contact-form-wrapper h3 {
+      color: #FFFFFF;
+    }
+
+    body.dark-mode .form-control {
+      background: #252525;
+      border: 1px solid #333;
+      color: #E0E0E0;
+    }
+
+    body.dark-mode .form-control::placeholder {
+      color: #888;
+    }
+
+    body.dark-mode .contact-meta-info {
+      color: #AAAAAA;
+    }
+
+    body.dark-mode footer {
+      background: #0D0D0D;
+    }
+
+    body.dark-mode .footer-content {
+      border-bottom-color: #222;
+    }
+
+    body.dark-mode .footer-info .brand h4 {
+      color: #FFFFFF;
+    }
+
+    body.dark-mode .footer-info .brand p {
+      color: #AAAAAA;
+    }
+
+    body.dark-mode .footer-copy {
+      color: #888;
+    }
+
+    body.dark-mode .tech-credit {
+      color: #666;
+    }
+
+    body.dark-mode .btn-primary {
+      background: #333;
+    }
+
+    body.dark-mode .btn-primary:hover {
+      background: #444;
+    }
+
+    body.dark-mode .back-to-top {
+      background: #333;
+      color: #FFFFFF;
+    }
+
+    body.dark-mode .back-to-top:hover {
+      background: #444;
+    }
+
+    /* ===== FIN MODO OSCURO ===== */
 
     .watermark {
       position: fixed;
@@ -50,6 +321,7 @@
       stroke: #1A1A1A;
       stroke-width: 20;
       fill: none;
+      transition: stroke 0.3s ease;
     }
 
     :root {
@@ -76,6 +348,7 @@
       background: #000000;
       border-bottom: 1px solid rgba(255,255,255,0.1);
       padding: 0.8rem 2rem;
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
     .nav-container {
       max-width: 1400px;
@@ -105,11 +378,13 @@
       stroke: #FFFFFF;
       stroke-width: 13;
       fill: none;
+      transition: stroke 0.3s ease;
     }
     .logo-text h1 {
       font-size: 1.5rem;
       font-weight: 800;
       color: #FFFFFF;
+      transition: color 0.3s ease;
     }
     .logo-text p {
       font-size: 0.7rem;
@@ -117,6 +392,7 @@
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
+      transition: color 0.3s ease;
     }
     .nav-links {
       display: flex;
@@ -128,6 +404,7 @@
       text-decoration: none;
       font-weight: 500;
       font-size: 0.95rem;
+      transition: color 0.3s ease;
     }
     .header-buttons {
       display: flex;
@@ -146,6 +423,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     }
     .dark-mode-toggle {
       background: rgba(255,255,255,0.1);
@@ -156,6 +434,10 @@
       border-radius: 50%;
       cursor: pointer;
       font-size: 1.1rem;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .dark-mode-toggle:hover {
+      background: rgba(255,255,255,0.2);
     }
     .menu-toggle {
       display: none;
@@ -169,6 +451,7 @@
       width: 28px;
       height: 2px;
       background-color: #FFFFFF;
+      transition: background-color 0.3s ease;
     }
 
     /* HERO BANNER */
@@ -220,6 +503,7 @@
       font-family: 'Playfair Display', serif;
       margin-bottom: 1rem;
       max-width: 600px;
+      text-align: justify;
     }
     .cinex-slide-content p {
       color: #F0F0F0;
@@ -227,6 +511,7 @@
       max-width: 500px;
       line-height: 1.5;
       margin-bottom: 1.5rem;
+      text-align: justify;
     }
     .cinex-arrow {
       position: absolute;
@@ -261,6 +546,10 @@
       gap: 8px;
       text-decoration: none;
       font-size: 0.85rem;
+      transition: background 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: #333;
     }
 
     /* TICKER */
@@ -269,6 +558,7 @@
       border-top: 1px solid var(--border-light);
       border-bottom: 1px solid var(--border-light);
       padding: 0.6rem 0;
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
     .ticker-container {
       max-width: 1400px;
@@ -288,11 +578,13 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      transition: color 0.3s ease;
     }
     .ticker-separator {
       width: 1px;
       height: 10px;
       background-color: #CCCCCC;
+      transition: background-color 0.3s ease;
     }
 
     /* ABOUT */
@@ -312,18 +604,21 @@
       padding: 1.5rem;
       border-radius: 1.2rem;
       border: 1px solid var(--border-light);
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
     .about-text h2 {
       font-size: 1.8rem;
       font-family: 'Playfair Display', serif;
       margin-bottom: 0.8rem;
+      transition: color 0.3s ease;
     }
     .about-text p {
       color: var(--gray);
-      line-height: 1.5;
+      line-height: 1.6;
       margin-bottom: 0.6rem;
       font-size: 0.85rem;
       text-align: justify;
+      transition: color 0.3s ease;
     }
     .exp-block {
       margin-top: 0.8rem;
@@ -331,6 +626,8 @@
       border-top: 2px solid #000;
       font-weight: 600;
       font-size: 0.85rem;
+      transition: border-color 0.3s ease;
+      text-align: justify;
     }
     .founders-photo {
       background: var(--light-gray);
@@ -338,6 +635,7 @@
       padding: 1rem;
       text-align: center;
       border: 1px solid var(--border-light);
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
     .founders-img {
       width: 100%;
@@ -356,22 +654,27 @@
       padding: 1rem;
       background: var(--light-gray);
       border-radius: 1.2rem;
+      transition: background 0.3s ease;
     }
     .stat-card {
       text-align: center;
       padding: 1rem;
       background: #FFFFFF;
       border-radius: 1rem;
+      transition: background 0.3s ease;
     }
     .stat-number {
       font-size: 1.6rem;
       font-weight: 800;
       font-family: 'Playfair Display', serif;
+      transition: color 0.3s ease;
     }
     .stat-label {
       color: var(--gray);
       font-size: 0.7rem;
       margin-top: 0.3rem;
+      transition: color 0.3s ease;
+      text-align: center;
     }
     .progress-bar {
       width: 100%;
@@ -380,13 +683,14 @@
       border-radius: 2px;
       margin-top: 0.6rem;
       overflow: hidden;
+      transition: background 0.3s ease;
     }
     .progress-fill {
       width: 0%;
       height: 100%;
       background: #000;
       border-radius: 2px;
-      transition: width 1.5s ease-out;
+      transition: width 1.5s ease-out, background 0.3s ease;
     }
 
     /* SERVICES */
@@ -400,6 +704,7 @@
       font-size: 1.8rem;
       font-family: 'Playfair Display', serif;
       margin-bottom: 1.5rem;
+      transition: color 0.3s ease;
     }
     .services-grid {
       display: grid;
@@ -412,6 +717,7 @@
       border: 1px solid var(--border-light);
       overflow: hidden;
       cursor: pointer;
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
     .service-header {
       padding: 1rem;
@@ -422,22 +728,24 @@
     .service-header i {
       font-size: 1.3rem;
       min-width: 28px;
+      transition: color 0.3s ease;
     }
     .service-header h3 {
       font-size: 0.9rem;
       font-weight: 700;
       margin: 0;
       flex: 1;
+      transition: color 0.3s ease;
     }
     .service-header .toggle-icon {
       font-size: 0.75rem;
       color: var(--gray);
-      transition: transform 0.3s;
+      transition: transform 0.3s, color 0.3s ease;
     }
     .service-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.5s ease;
+      transition: max-height 0.5s ease, padding 0.3s ease, border-color 0.3s ease;
       padding: 0 1rem;
       border-top: 0px solid transparent;
     }
@@ -451,9 +759,11 @@
     }
     .service-content p {
       color: var(--gray);
-      line-height: 1.5;
+      line-height: 1.6;
       font-size: 0.8rem;
       margin-bottom: 0.6rem;
+      transition: color 0.3s ease;
+      text-align: justify;
     }
 
     /* VIDEO */
@@ -468,17 +778,19 @@
     }
 
     /* ============================================================
-       TESTIMONIOS - CARRUSEL CON 5 TARJETAS (TODAS VISIBLES)
+       TESTIMONIOS - CARRUSEL CON 5 TARJETAS
        ============================================================ */
     .testimonial-section {
       padding: 3rem 1.5rem;
       background: var(--light-gray);
+      transition: background 0.3s ease;
     }
     .testimonial-section h2 {
       text-align: center;
       font-size: 1.8rem;
       font-family: 'Playfair Display', serif;
       margin-bottom: 1.5rem;
+      transition: color 0.3s ease;
     }
     
     .testimonial-carousel-container {
@@ -506,7 +818,7 @@
       padding: 1.5rem 1.5rem 1.2rem 1.5rem !important;
       box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
       border: 1px solid #E5E5E5 !important;
-      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease !important;
       display: flex !important;
       flex-direction: column !important;
       height: 100% !important;
@@ -526,6 +838,7 @@
       font-size: 0.7rem !important;
       letter-spacing: 3px !important;
       flex-shrink: 0 !important;
+      text-align: justify;
     }
     
     .testimonial-card .testimonial-text {
@@ -549,6 +862,7 @@
       max-height: 10rem !important;
       min-height: 4rem !important;
       margin-bottom: 0.3rem !important;
+      transition: color 0.3s ease !important;
     }
     
     .testimonial-card .testimonial-author {
@@ -557,15 +871,20 @@
       padding-top: 0.6rem !important;
       flex-shrink: 0 !important;
       text-align: left !important;
+      transition: border-color 0.3s ease !important;
     }
     .testimonial-card .testimonial-author h4 {
       font-size: 0.85rem !important;
       font-weight: 700 !important;
       color: #1A1A1A !important;
+      transition: color 0.3s ease !important;
+      text-align: justify;
     }
     .testimonial-card .testimonial-author span {
       font-size: 0.65rem !important;
       color: #888888 !important;
+      transition: color 0.3s ease !important;
+      text-align: justify;
     }
 
     /* DOTS DEL CARRUSEL */
@@ -605,6 +924,7 @@
       max-width: 500px;
       margin: 0 auto;
       border: 2px solid #25D366;
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
     .app-card i {
       font-size: 2rem;
@@ -615,23 +935,29 @@
       font-weight: 800;
       margin-bottom: 0.6rem;
       font-family: 'Playfair Display', serif;
+      transition: color 0.3s ease;
+      text-align: justify;
     }
     .app-card p {
       color: var(--gray);
       font-size: 0.85rem;
       line-height: 1.4;
+      transition: color 0.3s ease;
+      text-align: justify;
     }
 
-    /* CONTACT */
+    /* ===== CONTACT - FORMULARIO CON FORMPREE + HONEYPOT ===== */
     .contact-section {
       padding: 3rem 1.5rem;
       background: #FFFFFF;
+      transition: background 0.3s ease;
     }
     .contact-section h2 {
       text-align: center;
       font-size: 1.8rem;
       font-family: 'Playfair Display', serif;
       margin-bottom: 1.2rem;
+      transition: color 0.3s ease;
     }
     .map-contact {
       display: grid;
@@ -642,12 +968,14 @@
       padding: 1.2rem;
       max-width: 1400px;
       margin: 0 auto;
+      transition: background 0.3s ease;
     }
     .map-container {
       border-radius: 0.8rem;
       overflow: hidden;
       min-height: 280px;
       border: 1px solid var(--border-light);
+      transition: border-color 0.3s ease;
     }
     .map-container iframe {
       width: 100%;
@@ -659,6 +987,8 @@
       font-size: 1.3rem;
       margin-bottom: 0.8rem;
       font-family: 'Playfair Display', serif;
+      transition: color 0.3s ease;
+      text-align: justify;
     }
     .form-group {
       margin-bottom: 0.6rem;
@@ -669,8 +999,35 @@
       border-radius: 0.5rem;
       border: 1px solid var(--border-light);
       background: #FFFFFF;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: 0.8rem;
+      transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+    .form-control.error {
+      border-color: #e74c3c;
+      box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+    }
+    .form-control.success {
+      border-color: #27ae60;
+      box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.15);
+    }
+    .form-message {
+      margin-top: 0.6rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      display: none;
+    }
+    .form-message.success {
+      display: block;
+      background: #27ae60;
+      color: white;
+    }
+    .form-message.error {
+      display: block;
+      background: #e74c3c;
+      color: white;
     }
     .contact-meta-info {
       margin-top: 1rem;
@@ -678,18 +1035,21 @@
       gap: 0.5rem;
       font-size: 0.75rem;
       color: var(--gray);
+      transition: color 0.3s ease;
+      text-align: justify;
     }
     .meta-item i {
       margin-right: 6px;
       width: 18px;
     }
 
-    /* FOOTER */
+    /* ===== FOOTER CON LOGOS OFICIALES 2026 ===== */
     footer {
       background: #1A1A1A;
       color: #AAAAAA;
       padding: 2rem 1.5rem 1.2rem;
       margin-top: 2rem;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     .footer-content {
       max-width: 1400px;
@@ -698,53 +1058,132 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1.2rem;
+      gap: 1.5rem;
       border-bottom: 1px solid #333;
-      padding-bottom: 1.2rem;
+      padding-bottom: 1.5rem;
+      transition: border-color 0.3s ease;
     }
-    .newsletter-section h4 {
-      color: white;
-      margin-bottom: 0.6rem;
-      font-size: 0.85rem;
-    }
-    .newsletter-form {
+    .footer-info {
       display: flex;
-      gap: 0.5rem;
+      align-items: center;
+      gap: 1.5rem;
       flex-wrap: wrap;
     }
-    .newsletter-input {
-      padding: 0.5rem 0.8rem;
-      border-radius: 2rem;
-      border: none;
-      flex: 1;
-      min-width: 160px;
-      font-size: 0.75rem;
+    .footer-info .brand {
+      display: flex;
+      flex-direction: column;
     }
-    .btn-small {
-      padding: 0.5rem 1rem;
-      font-size: 0.7rem;
+    .footer-info .brand h4 {
+      color: white;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
     }
-    .footer-socials a {
-      transition: 0.2s;
-      display: inline-block;
-      margin-left: 1rem;
-      font-size: 2rem;
+    .footer-info .brand p {
+      color: #AAAAAA;
+      font-size: 0.8rem;
+      max-width: 400px;
+      transition: color 0.3s ease;
     }
-    .footer-socials a:first-child { color: #1877F2; }
-    .footer-socials a:last-child { color: #E4405F; }
+
+    /* ===== LOGOS OFICIALES 2026 ===== */
+    .logo-facebook-2026 {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #1877F2;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 900;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex-shrink: 0;
+    }
+    .logo-facebook-2026:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4);
+    }
+
+    .logo-instagram-2026 {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 30%;
+      background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+      color: white;
+      font-size: 1.4rem;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex-shrink: 0;
+    }
+    .logo-instagram-2026 i {
+      font-size: 1.3rem;
+    }
+    .logo-instagram-2026:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(214, 41, 118, 0.4);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
     .footer-copy {
       text-align: center;
       font-size: 0.65rem;
       margin-top: 1rem;
+      transition: color 0.3s ease;
     }
     .tech-credit {
       text-align: center;
       font-size: 0.6rem;
       margin-top: 0.5rem;
       opacity: 0.7;
+      transition: color 0.3s ease;
     }
 
-    /* WHATSAPP FLOAT */
+    /* ===== BOTÓN VOLVER ARRIBA (BACK TO TOP) ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 85px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: #1A1A1A;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      background: #333;
+      transform: scale(1.1);
+    }
+
+    /* WHATSAPP FLOAT - Ajuste para que no se superpongan */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -761,6 +1200,10 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       z-index: 1001;
       text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
     }
 
     .skeleton {
@@ -778,7 +1221,26 @@
       border-radius: 0;
     }
 
-    /* RESPONSIVE */
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    
+    input, select, textarea {
+      font-size: 16px;
+    }
+
+    button, 
+    .btn-primary,
+    .saas-access-btn,
+    .service-card,
+    .whatsapp-float,
+    .back-to-top,
+    .dot,
+    .menu-toggle,
+    .cinex-arrow {
+      touch-action: manipulation;
+    }
+
     @media (max-width: 1140px) {
       .about-grid { grid-template-columns: 1fr; }
       .map-contact { grid-template-columns: 1fr; }
@@ -825,8 +1287,42 @@
       .cinex-arrow.prev { left: 12px; }
       .cinex-arrow.next { right: 12px; }
       .cinex-slide-content { padding: 2rem 1.2rem; }
-      .footer-content { flex-direction: column; text-align: center; }
-      .newsletter-form { justify-content: center; }
+      
+      .footer-content { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 1.5rem;
+      }
+      .footer-info {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        justify-content: center;
+      }
+      .footer-info .brand {
+        align-items: center;
+      }
+      .footer-info .brand p {
+        text-align: center;
+        max-width: 100%;
+      }
+      .footer-socials { 
+        justify-content: center; 
+      }
+      
+      .skeleton-slide { min-height: 280px; }
+      .ticker-item { font-size: 0.6rem; }
+      .ticker-separator { display: none; }
+      .form-control { font-size: 16px !important; }
+      .navbar { padding: 0.8rem 1rem; }
+      
+      .back-to-top {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+        bottom: 80px;
+        right: 15px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -842,6 +1338,57 @@
       .testimonial-card { min-height: 180px !important; padding: 1rem !important; }
       .saas-access-btn { padding: 0.4rem 0.8rem; font-size: 0.7rem; }
       .cinex-slide-content h2 { font-size: 1.2rem; }
+      
+      .nav-container { flex-wrap: nowrap; gap: 0.3rem; }
+      .header-buttons { gap: 0.3rem; }
+      .dark-mode-toggle { width: 36px; height: 36px; font-size: 0.9rem; }
+      
+      .logo-facebook-2026,
+      .logo-instagram-2026 {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+      }
+      .logo-instagram-2026 i {
+        font-size: 1.1rem;
+      }
+      .footer-socials { gap: 0.6rem; }
+      
+      .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        bottom: 75px;
+        right: 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .cinex-slide-content { padding: 1.5rem 1rem; }
+      .cinex-slide-content h2 { font-size: 1.1rem; }
+      .cinex-slide-content p { font-size: 0.85rem; }
+      .service-header { padding: 0.8rem; }
+      .service-header h3 { font-size: 0.8rem; }
+      .logo-svg-container { width: 36px; height: 36px; }
+      .logo-text h1 { font-size: 0.75rem; }
+      .logo-text p { font-size: 0.55rem; }
+      .logo-facebook-2026,
+      .logo-instagram-2026 {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+      }
+      .logo-instagram-2026 i {
+        font-size: 0.9rem;
+      }
+      .footer-socials { gap: 0.5rem; }
+      .back-to-top {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+        bottom: 70px;
+        right: 10px;
+      }
     }
   </style>
 </head>
@@ -882,7 +1429,7 @@
     </div>
     <div class="header-buttons">
       <button class="saas-access-btn" id="saasAccessBtn"><i class="fas fa-chalkboard-user"></i> Sistema Administrativo</button>
-      <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Cambiar modo día/noche"><i class="fas fa-moon"></i></button>
     </div>
   </div>
 </nav>
@@ -946,10 +1493,26 @@
     </div>
   </div>
 
+  <!-- STATS -->
   <div class="stats-container" id="stats-container">
-    <div class="stat-card"><i class="fas fa-building"></i><div class="stat-number"><span id="stat1">0</span>+</div><div class="stat-label">Condominios Administrados</div><div class="progress-bar"><div class="progress-fill" id="progress1"></div></div></div>
-    <div class="stat-card"><i class="fas fa-user-check"></i><div class="stat-number"><span id="stat2">0</span>+</div><div class="stat-label">Clientes Satisfechos</div><div class="progress-bar"><div class="progress-fill" id="progress2"></div></div></div>
-    <div class="stat-card"><i class="fas fa-chart-line"></i><div class="stat-number"><span id="stat3">0</span>%</div><div class="stat-label">Reducción de Morosidad</div><div class="progress-bar"><div class="progress-fill" id="progress3"></div></div></div>
+    <div class="stat-card">
+      <i class="fas fa-building"></i>
+      <div class="stat-number"><span id="stat1">0</span>+</div>
+      <div class="stat-label">Condominios Administrados</div>
+      <div class="progress-bar"><div class="progress-fill" id="progress1"></div></div>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-user-check"></i>
+      <div class="stat-number"><span id="stat2">0</span>%</div>
+      <div class="stat-label">Clientes Satisfechos</div>
+      <div class="progress-bar"><div class="progress-fill" id="progress2"></div></div>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-chart-line"></i>
+      <div class="stat-number"><span id="stat3">0</span>%</div>
+      <div class="stat-label">Reducción de Morosidad</div>
+      <div class="progress-bar"><div class="progress-fill" id="progress3"></div></div>
+    </div>
   </div>
 </section>
 
@@ -989,16 +1552,14 @@
   </div>
 </div>
 
-<!-- ============================================================
-TESTIMONIOS - CARRUSEL CON 5 TARJETAS (TODAS VISIBLES)
-============================================================ -->
+<!-- TESTIMONIOS -->
 <section id="testimonios" class="testimonial-section">
   <h2>La voz de <span style="color:#1A1A1A;">nuestras comunidades</span></h2>
   
   <div class="testimonial-carousel-container">
     <div class="testimonial-carousel-track" id="testimonialTrack">
       
-      <!-- Tarjeta 1 - RESIDENCIAS TAURUS II -->
+      <!-- Tarjeta 1 -->
       <div class="testimonial-carousel-slide">
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
@@ -1064,7 +1625,7 @@ TESTIMONIOS - CARRUSEL CON 5 TARJETAS (TODAS VISIBLES)
   <div class="testimonial-dots" id="testimonialDots"></div>
 </section>
 
-<!-- CONTACTO -->
+<!-- CONTACTO - CON FORMPREE + HONEYPOT -->
 <section id="contacto" class="contact-section">
   <h2>Conectemos hoy</h2>
   <div class="map-contact">
@@ -1073,14 +1634,33 @@ TESTIMONIOS - CARRUSEL CON 5 TARJETAS (TODAS VISIBLES)
     </div>
     <div class="contact-form-wrapper">
       <h3>Escribenos</h3>
-      <form id="contactForm">
-        <div class="form-group"><input type="text" id="nombre" class="form-control" placeholder="Nombre completo"></div>
-        <div class="form-group"><input type="email" id="email" class="form-control" placeholder="Correo electrónico"></div>
-        <div class="form-group"><input type="text" id="condominio" class="form-control" placeholder="Nombre del condominio"></div>
-        <div class="form-group"><textarea id="mensaje" class="form-control" rows="3" placeholder="Mensaje"></textarea></div>
-        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Enviar Mensaje</button>
-        <div id="formMessage"></div>
+      
+      <!-- FORMULARIO CON HONEYPOT -->
+      <form id="contactForm" action="https://formspree.io/f/mjgnvqon" method="POST">
+        <div class="form-group">
+          <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre completo" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" class="form-control" placeholder="Correo electrónico" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="condominio" name="condominio" class="form-control" placeholder="Nombre del condominio">
+        </div>
+        <div class="form-group">
+          <textarea id="mensaje" name="mensaje" class="form-control" rows="3" placeholder="Mensaje" required></textarea>
+        </div>
+        
+        <!-- ✅ HONEYPOT - Campo oculto anti-spam -->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input type="text" id="honeypot" name="honeypot" tabindex="-1" value="">
+        </div>
+        
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;" id="submitBtn">
+          <i class="fas fa-paper-plane"></i> Enviar Mensaje
+        </button>
+        <div id="formMessage" class="form-message"></div>
       </form>
+      
       <div class="contact-meta-info">
         <div class="meta-item"><i class="fas fa-phone-alt"></i> +58 212 751 0275</div>
         <div class="meta-item"><i class="fas fa-envelope"></i> contacto@andradeyasoc.com</div>
@@ -1091,20 +1671,28 @@ TESTIMONIOS - CARRUSEL CON 5 TARJETAS (TODAS VISIBLES)
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER CON LOGOS OFICIALES 2026 -->
 <footer>
   <div class="footer-content">
-    <div class="newsletter-section">
-      <h4><i class="fas fa-envelope"></i> Suscríbete a nuestro Newsletter</h4>
-      <form id="newsletterForm" class="newsletter-form">
-        <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="Tu correo electrónico" required>
-        <button type="submit" class="btn-primary btn-small">Suscribirse</button>
-      </form>
-      <div id="newsletterMessage"></div>
-    </div>
-    <div class="footer-socials">
-      <a href="https://www.facebook.com/profile.php?id=61590911481877" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <div class="footer-info">
+      <div class="brand">
+        <h4><i class="fas fa-building"></i> Andrade y Asociados</h4>
+        <p>Administración profesional de condominios en Caracas. Transparencia, tecnología y confianza legal.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=61590911481877" 
+           target="_blank" 
+           class="logo-facebook-2026" 
+           aria-label="Facebook">
+          <span style="font-size:1.3rem; font-weight:900; font-family:'Helvetica',Arial,sans-serif;">f</span>
+        </a>
+        <a href="#" 
+           target="_blank" 
+           class="logo-instagram-2026" 
+           aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
     </div>
   </div>
   <div class="footer-copy">
@@ -1115,24 +1703,41 @@ TESTIMONIOS - CARRUSEL CON 5 TARJETAS (TODAS VISIBLES)
   </div>
 </footer>
 
+<!-- ===== BOTÓN VOLVER ARRIBA ===== -->
+<a href="#inicio" class="back-to-top" id="backToTop" aria-label="Volver al inicio">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/584141234567?text=Hola%2C%20me%20interesa%20sus%20servicios" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/584241457764?text=Hola%2C%20me%20interesa%20sus%20servicios" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 800, once: true, offset: 80 });
 
-  // DARK MODE TOGGLE
+  // ===== DARK MODE TOGGLE =====
   const darkModeToggle = document.getElementById('darkModeToggle');
+  const icon = darkModeToggle.querySelector('i');
+  
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  }
+  
   darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    const icon = darkModeToggle.querySelector('i');
+    
     if (document.body.classList.contains('dark-mode')) {
       icon.classList.remove('fa-moon');
       icon.classList.add('fa-sun');
+      localStorage.setItem('darkMode', 'enabled');
     } else {
       icon.classList.remove('fa-sun');
       icon.classList.add('fa-moon');
+      localStorage.setItem('darkMode', 'disabled');
     }
   });
 
@@ -1180,7 +1785,7 @@ TESTIMONIOS - CARRUSEL CON 5 TARJETAS (TODAS VISIBLES)
     updateSlider();
   }
 
-  // TESTIMONIAL CAROUSEL - 5 TARJETAS (2 PÁGINAS: 3 + 2)
+  // TESTIMONIAL CAROUSEL
   function initTestimonialCarousel() {
     const track = document.getElementById('testimonialTrack');
     const slides = Array.from(document.querySelectorAll('.testimonial-carousel-slide'));
@@ -1262,11 +1867,11 @@ TESTIMONIOS - CARRUSEL CON 5 TARJETAS (TODAS VISIBLES)
   const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
-        animateValue('stat1', 0, 25, 2000);
-        animateValue('stat2', 0, 150, 2000);
+        animateValue('stat1', 0, 18, 2000);
+        animateValue('stat2', 0, 100, 2000);
         animateValue('stat3', 0, 40, 2000);
-        document.getElementById('progress1').style.width = '85%';
-        document.getElementById('progress2').style.width = '92%';
+        document.getElementById('progress1').style.width = '80%';
+        document.getElementById('progress2').style.width = '100%';
         document.getElementById('progress3').style.width = '78%';
         statsObserver.disconnect();
       }
@@ -1274,6 +1879,7 @@ TESTIMONIOS - CARRUSEL CON 5 TARJETAS (TODAS VISIBLES)
   }, { threshold: 0.3 });
   const statsContainer = document.getElementById('stats-container');
   if(statsContainer) statsObserver.observe(statsContainer);
+  
   function animateValue(id, start, end, duration) {
     const obj = document.getElementById(id);
     let startTimestamp = null;
@@ -1282,36 +1888,209 @@ TESTIMONIOS - CARRUSEL CON 5 TARJETAS (TODAS VISIBLES)
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       obj.innerText = Math.floor(progress * (end - start) + start);
       if (progress < 1) requestAnimationFrame(step);
-      else obj.innerText = end;
+      else {
+        obj.innerText = end;
+      }
     };
     requestAnimationFrame(step);
   }
 
-  // FORMULARIO CONTACTO
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = this.querySelector('button[type="submit"]');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = 'Enviando...';
-    btn.disabled = true;
-    setTimeout(() => {
-      document.getElementById('formMessage').innerHTML = '<div style="background:#27ae60;color:white;padding:0.5rem;border-radius:0.5rem;margin-top:0.6rem;text-align:center;font-size:0.75rem;">¡Mensaje enviado con éxito!</div>';
-      this.reset();
-      btn.innerHTML = originalText;
-      btn.disabled = false;
-      setTimeout(() => document.getElementById('formMessage').innerHTML = '', 5000);
-    }, 1500);
+  // ============================================================
+  // BOTÓN VOLVER ARRIBA (BACK TO TOP)
+  // ============================================================
+  const backToTopBtn = document.getElementById('backToTop');
+  
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
   });
 
-  // NEWSLETTER
-  document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+  // ============================================================
+  // FORMULARIO DE CONTACTO - CON HONEYPOT ANTI-SPAM
+  // ============================================================
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const email = document.getElementById('newsletterEmail');
-    if(email.value) {
-      document.getElementById('newsletterMessage').innerHTML = '<div style="background:#27ae60;color:white;padding:0.5rem;border-radius:0.5rem;margin-top:0.5rem;text-align:center;font-size:0.75rem;">¡Suscripción exitosa!</div>';
-      email.value = '';
-      setTimeout(() => document.getElementById('newsletterMessage').innerHTML = '', 3000);
+    
+    const nombre = document.getElementById('nombre');
+    const email = document.getElementById('email');
+    const condominio = document.getElementById('condominio');
+    const mensaje = document.getElementById('mensaje');
+    const honeypot = document.getElementById('honeypot');
+    const messageDiv = document.getElementById('formMessage');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    messageDiv.className = 'form-message';
+    messageDiv.style.display = 'none';
+    messageDiv.textContent = '';
+    
+    [nombre, email, mensaje].forEach(el => {
+      el.classList.remove('error', 'success');
+    });
+    
+    // HONEYPOT - Anti-spam
+    if (honeypot.value !== '') {
+      messageDiv.textContent = '✅ ¡Mensaje enviado con éxito!';
+      messageDiv.className = 'form-message success';
+      messageDiv.style.display = 'block';
+      this.reset();
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensaje';
+      submitBtn.disabled = false;
+      setTimeout(() => {
+        messageDiv.style.display = 'none';
+        messageDiv.className = 'form-message';
+      }, 3000);
+      return;
     }
+    
+    // VALIDACIÓN
+    let isValid = true;
+    let errorMsg = '';
+    
+    if (nombre.value.trim() === '') {
+      nombre.classList.add('error');
+      isValid = false;
+      errorMsg = 'Por favor, ingresa tu nombre completo.';
+    } else {
+      nombre.classList.add('success');
+    }
+    
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (email.value.trim() === '') {
+      email.classList.add('error');
+      isValid = false;
+      if (!errorMsg) errorMsg = 'Por favor, ingresa tu correo electrónico.';
+    } else if (!emailRegex.test(email.value.trim())) {
+      email.classList.add('error');
+      isValid = false;
+      errorMsg = 'Por favor, ingresa un correo electrónico válido.';
+    } else {
+      email.classList.add('success');
+    }
+    
+    if (mensaje.value.trim() === '') {
+      mensaje.classList.add('error');
+      isValid = false;
+      if (!errorMsg) errorMsg = 'Por favor, escribe un mensaje.';
+    } else {
+      mensaje.classList.add('success');
+    }
+    
+    if (!isValid) {
+      messageDiv.textContent = '⚠️ ' + errorMsg;
+      messageDiv.className = 'form-message error';
+      messageDiv.style.display = 'block';
+      messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    
+    // ENVÍO
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+    submitBtn.disabled = true;
+    
+    const formData = new FormData();
+    formData.append('nombre', nombre.value.trim());
+    formData.append('email', email.value.trim());
+    formData.append('condominio', condominio.value.trim());
+    formData.append('mensaje', mensaje.value.trim());
+    
+    fetch('https://formspree.io/f/mjgnvqon', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Error en el envío');
+      }
+    })
+    .then(data => {
+      messageDiv.textContent = '✅ ¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
+      messageDiv.className = 'form-message success';
+      messageDiv.style.display = 'block';
+      
+      this.reset();
+      [nombre, email, condominio, mensaje].forEach(el => {
+        el.classList.remove('success', 'error');
+      });
+      
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+      
+      setTimeout(() => {
+        messageDiv.style.display = 'none';
+        messageDiv.className = 'form-message';
+      }, 5000);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      messageDiv.textContent = '❌ Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.';
+      messageDiv.className = 'form-message error';
+      messageDiv.style.display = 'block';
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    });
+  });
+
+  // ============================================================
+  // VALIDACIÓN EN TIEMPO REAL
+  // ============================================================
+  const emailInput = document.getElementById('email');
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  emailInput.addEventListener('blur', function() {
+    if (this.value.trim() !== '') {
+      if (emailRegex.test(this.value.trim())) {
+        this.classList.remove('error');
+        this.classList.add('success');
+      } else {
+        this.classList.remove('success');
+        this.classList.add('error');
+      }
+    } else {
+      this.classList.remove('success', 'error');
+    }
+  });
+
+  emailInput.addEventListener('input', function() {
+    if (this.value.trim() !== '' && emailRegex.test(this.value.trim())) {
+      this.classList.remove('error');
+      this.classList.add('success');
+    } else if (this.value.trim() !== '') {
+      this.classList.remove('success');
+      this.classList.add('error');
+    } else {
+      this.classList.remove('success', 'error');
+    }
+  });
+
+  ['nombre', 'mensaje'].forEach(id => {
+    const input = document.getElementById(id);
+    input.addEventListener('blur', function() {
+      if (this.value.trim() !== '') {
+        this.classList.remove('error');
+        this.classList.add('success');
+      } else {
+        this.classList.remove('success');
+        this.classList.add('error');
+      }
+    });
+    input.addEventListener('input', function() {
+      if (this.value.trim() !== '') {
+        this.classList.remove('error');
+        this.classList.add('success');
+      } else {
+        this.classList.remove('success');
+        this.classList.add('error');
+      }
+    });
   });
 </script>
 </body>
