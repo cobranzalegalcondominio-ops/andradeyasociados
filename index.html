@@ -8,6 +8,41 @@
   <!-- ===== META DESCRIPTION PARA SEO ===== -->
   <meta name="description" content="Andrade y Asociados - Administración profesional de condominios en Caracas. Gestión transparente, tecnología avanzada y respaldo legal para tu comunidad residencial.">
   
+  <!-- ===== META AUTOR Y COPYRIGHT ===== -->
+  <meta name="author" content="Andrade y Asociados">
+  <meta name="copyright" content="Andrade y Asociados © 2026">
+  
+  <!-- ===== OPEN GRAPH (Redes Sociales) ===== -->
+  <meta property="og:title" content="Andrade y Asociados | Administración de Condominios">
+  <meta property="og:description" content="Administración profesional de condominios en Caracas. Gestión transparente, tecnología avanzada y respaldo legal para tu comunidad.">
+  <meta property="og:url" content="https://andradeyasociados.com.ve/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://andradeyasociados.com.ve/favicon.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- ===== THEME COLOR (Móviles) ===== -->
+  <meta name="theme-color" content="#1A1A1A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <!-- ===== DATOS ESTRUCTURADOS (JSON-LD) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Andrade y Asociados",
+    "description": "Administración profesional de condominios en Caracas",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Caracas",
+      "addressCountry": "Venezuela"
+    },
+    "telephone": "+58-212-751-0275",
+    "email": "contacto@andradeyasociados.com.ve",
+    "url": "https://andradeyasociados.com.ve/"
+  }
+  </script>
+  
   <!-- PREFETCH Y PRECONNECT PARA OPTIMIZACIÓN -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +65,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
+    /* ===== TODO TU CSS EXISTENTE PERMANECE IGUAL ===== */
     * {
       margin: 0;
       padding: 0;
@@ -349,7 +385,8 @@
       padding: 0 1.5rem;
     }
 
-    /* HEADER */
+    /* ===== EL RESTO DE TU CSS PERMANECE IGUAL ===== */
+    /* (todo el CSS que ya tenías desde .navbar hasta el final) */
     .navbar {
       position: sticky;
       top: 0;
@@ -786,9 +823,7 @@
       border-radius: 1rem;
     }
 
-    /* ============================================================
-       TESTIMONIOS - CARRUSEL CON 5 TARJETAS
-       ============================================================ */
+    /* TESTIMONIOS */
     .testimonial-section {
       padding: 3rem 1.5rem;
       background: var(--light-gray);
@@ -955,7 +990,7 @@
       text-align: justify;
     }
 
-    /* ===== CONTACT - FORMULARIO CON FORMPREE + HONEYPOT ===== */
+    /* CONTACT */
     .contact-section {
       padding: 3rem 1.5rem;
       background: #FFFFFF;
@@ -1052,7 +1087,7 @@
       width: 18px;
     }
 
-    /* ===== FOOTER CON LOGOS OFICIALES 2026 ===== */
+    /* FOOTER */
     footer {
       background: #1A1A1A;
       color: #AAAAAA;
@@ -1094,7 +1129,7 @@
       transition: color 0.3s ease;
     }
 
-    /* ===== LOGOS OFICIALES 2026 ===== */
+    /* LOGOS OFICIALES 2026 */
     .logo-facebook-2026 {
       display: inline-flex;
       align-items: center;
@@ -1158,7 +1193,7 @@
       transition: color 0.3s ease;
     }
 
-    /* ===== BOTÓN VOLVER ARRIBA (BACK TO TOP) ===== */
+    /* BOTÓN VOLVER ARRIBA */
     .back-to-top {
       position: fixed;
       bottom: 85px;
@@ -1192,7 +1227,7 @@
       transform: scale(1.1);
     }
 
-    /* WHATSAPP FLOAT - Ajuste para que no se superpongan */
+    /* WHATSAPP FLOAT */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -1230,10 +1265,7 @@
       border-radius: 0;
     }
 
-    /* ============================================================
-       RESPONSIVE
-       ============================================================ */
-    
+    /* RESPONSIVE */
     input, select, textarea {
       font-size: 16px;
     }
@@ -1403,6 +1435,9 @@
 </head>
 <body>
 
+<!-- ===== EL RESTO DEL BODY PERMANECE IGUAL ===== -->
+<!-- (todo tu HTML existente desde el logo de agua hasta el final) -->
+
 <!-- LOGO DE AGUA -->
 <div class="watermark">
   <svg viewBox="0 0 320 250">
@@ -1498,7 +1533,7 @@
       <div class="exp-block"><i class="fas fa-calendar-alt"></i> +10 años de experiencia</div>
     </div>
     <div class="founders-photo" data-aos="fade-left">
-      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Socias Fundadoras" class="founders-img">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Socias Fundadoras - Andrade y Asociados" class="founders-img">
     </div>
   </div>
 
@@ -1659,7 +1694,7 @@
           <textarea id="mensaje" name="mensaje" class="form-control" rows="3" placeholder="Mensaje" required></textarea>
         </div>
         
-        <!-- ✅ HONEYPOT - Campo oculto anti-spam -->
+        <!-- HONEYPOT - Campo oculto anti-spam -->
         <div style="position: absolute; left: -5000px;" aria-hidden="true">
           <input type="text" id="honeypot" name="honeypot" tabindex="-1" value="">
         </div>
@@ -1680,7 +1715,7 @@
   </div>
 </section>
 
-<!-- FOOTER CON LOGOS OFICIALES 2026 -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-content">
     <div class="footer-info">
@@ -1712,7 +1747,7 @@
   </div>
 </footer>
 
-<!-- ===== BOTÓN VOLVER ARRIBA ===== -->
+<!-- BOTÓN VOLVER ARRIBA -->
 <a href="#inicio" class="back-to-top" id="backToTop" aria-label="Volver al inicio">
   <i class="fas fa-chevron-up"></i>
 </a>
@@ -1724,9 +1759,10 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+  // ===== TODO TU JAVASCRIPT EXISTENTE PERMANECE IGUAL =====
   AOS.init({ duration: 800, once: true, offset: 80 });
 
-  // ===== DARK MODE TOGGLE =====
+  // DARK MODE TOGGLE
   const darkModeToggle = document.getElementById('darkModeToggle');
   const icon = darkModeToggle.querySelector('i');
   
@@ -1904,9 +1940,7 @@
     requestAnimationFrame(step);
   }
 
-  // ============================================================
-  // BOTÓN VOLVER ARRIBA (BACK TO TOP)
-  // ============================================================
+  // BOTÓN VOLVER ARRIBA
   const backToTopBtn = document.getElementById('backToTop');
   
   window.addEventListener('scroll', function() {
@@ -1917,9 +1951,7 @@
     }
   });
 
-  // ============================================================
-  // FORMULARIO DE CONTACTO - CON HONEYPOT ANTI-SPAM
-  // ============================================================
+  // FORMULARIO DE CONTACTO - CON HONEYPOT
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -2048,9 +2080,7 @@
     });
   });
 
-  // ============================================================
   // VALIDACIÓN EN TIEMPO REAL
-  // ============================================================
   const emailInput = document.getElementById('email');
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -2103,4 +2133,4 @@
   });
 </script>
 </body>
-</html>    
+</html>
